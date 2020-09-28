@@ -1,152 +1,306 @@
 # app name.
 
+### Technical Description: 
+A Command Line Interface App with CRUD functioning, incorporating:
+* Object Relational Mapping (with ActiveRecord)
+* SQL Databases (using sqlite3)
+* Object Orientation Models (via Ruby)
+* User-Friendly Navigation (with TTY prompts)
 
+<br />
+
+### App Description:
+The application is ....
+#
 ## Instructions:
 ### Click [here](http://localhost:3000/) to begin the application!
 
-----
-
+#
+#
 ## Models & Relationships
+<br>
 
-### User | Log (Join Model) | Workout | Recovery | Assessment
-<br />
-
-### User <br/>
-* A User has many Logs
-* A User has many Workouts, through Logs
-* A User has many Assessments
-* A User has many Recoveries
-
-### Log <br/>
-* A Log belongs to a User
-* A Log belongs to a Workout
-
-### Workout <br/>
-* A Workout has many Logs
-* A Workout has many Workouts, through Logs
+        Assessment | User | WorkoutLog (Join Model) | Workout | RecoveryLog (Join Model) | Recovery
 
 ### Assessment <br/>
 * An Assessment belongs to a User
 
-### Recovery <br/>
-* A Recovery belongs to a User
+### User <br/>
+* A User has many Assessments
 
+* A User has many WorkoutLogs
+* A User has many Workouts, through WorkoutLogs
+* A User has many RecoveryLogs
+* A User has many Recoveries, through RecoveryLogs
+
+### Workout <br/>
+* A Workout has many WorkoutLogs
+
+* A Workout has many Users, through WorkoutLogs
+
+### Recovery <br/>
+* A Recovery has many RecoveryLogs
+
+* A Recovery has many Users, through RecoveryLogs
+
+### WorkoutLog <br/>
+* A WorkoutLog belongs to a User
+
+* A WorkoutLog belongs to a Workout
+
+### RecoveryLog <br/>
+* A RecoveryLog belongs to a User
+
+* A RecoveryLog belongs to a Recovery
+#
 #
 ## SQL Database Table Properties
+<br>
 
 ### User Table Properties
 * Name
+
 * Username (Email Address)
 * Password
 
-### Log Table Properties
-* Date
+### Assessment Table Properties
+* Age (in years)
+
+* Sex (M or F)
+* Height (in inches)
+* Weight (in pounds)
+* Body Fat Percentage
+* Health Goal (Weight Loss, Weight Gain, or Maintenance)
 * User ID
-* Workout ID
 
 ### Workout Table Properties
 * Workout Type
-* Duration
-* Calories Burned
-
-### Assessment Table Properties
-* Age
-* Sex (M or F)
-* Height
-* Weight
-* Body Fat Percentage
-* Health Goal (Weight Loss, Weight Gain, Maintenance)
-* User ID
 
 ### Recovery Table Properties
 * Recovery Type
+
+### Workout Log Table Properties
+* Date
+
 * Duration
+* Calories Burned
 * User ID
+* Workout ID
+
+### Recovery Log Table Properties
+* Date
+
+* Duration
+* Relief Points (up to 5)
+* User ID
+* Recovery ID
 
 #
-## CRUD Functionality, aka User Stories
-"." Designates class methods | "#" Designates instance methods
 #
+## CRUD Functionality
+<br>
 
+### Create
+* User can create a new User account
 
-## Additional Methods
+        UsersController#new
+        UsersController#create
+
+* User can create a new Assessment
+
+        AssessmentsController#new
+        AssessmentsController#create
+
+* User can create a new WorkoutLog
+        
+        WorkoutLogsController#new
+        WorkoutLogsController#create
+
+* User can create a new RecoveryLog
+
+        RecoveryLogsController#new
+        RecoveryLogsController#create
+#
+### Read
+* User can view User account details, along with associated Assessments, WorkoutLogs, and RecoveryLogs
+
+        UsersController#show
+
+* User can view a list of all Workouts
+
+        WorkoutsController#index
+
+* User can view a list of all Recoveries
+
+        RecoveriesController#index
+* User can view Assessment details
+
+        AssessmentsController#show
+
+* User can view WorkoutLog details
+
+        WorkoutLogsController#show
+
+* User can view RecoveryLog details
+
+        RecoveryLogsController#show 
+#
+### Update
+* User can update User account details
+
+        UsersController#edit
+        UsersController#update
+* User can update an existing Assessment
+
+        AssessmentsController#edit
+        AssessmentsController#update
+
+* User can update an existing WorkoutLog details
+
+        WorkoutLogsController#edit
+        WorkoutLogsController#update
+* User can update an existing RecoveryLog details
+
+        RecoveryLogsController#edit
+        RecoveryLogsController#update
+#
+### Delete
+* User can delete its existing User account
+
+        UsersController#destory
+
+* User can delete an existing Assessment
+
+        AssessmentsController#destory
+
+* User can delete an existing WorkoutLog
+
+        WorkoutLogsController#destroy
+
+* User can delete an existing RecoveryLog
+
+        RecoveryLogsController#destroy
+#
+## Additional Model Methods
+<br/>
+
+### Assessment
+* User is provided with calculated Body Mass Index (BMI) based on height and weight
+    
+        Assessment#current_bmi
+* User is provided with recommended Body Mass Index (BMI) based on height and weight
+    
+        Assessment#recommended_bmi
+* User is provided with body fat category, based on sex and current body fat %
+
+        Assessment#current_bf_percent
+* User is provided with recommended body fat range, based on sex and current body fat %
+
+        Assessment#recommended_bf_percent
+* User is provided with maximum, based on age
+
+        Assessment#max_hr
+* User is provided with target heart rate, based on age
+
+        Assessment#target_hr
+* User is provided with recommended caloric intake based on Health Goal
+
+        Assessment#caloric_intake
+* User is provided with recommended water intake, based on weight
+
+        Assessment#water_intake
+#
 ### User
 * User is given achievement
     
         User#achievement
+* greeting
+#
+### WorkoutLog
+* User is provided with total number of WorkoutLog entries
 
-### Workout
+        WorkoutLog#total_workouts
+* User is provided with total calories burned of all WorkoutLogs
 
-* User is provided with workout with highest calories burned
-    
-        Workout#hightest_calories_burned
+        WorkoutLog#total_calories_burned
+* User is provided with total duration of all WorkoutLogs
 
-### Assessment
-* User is provided with suggested and calculated Body Mass Index (BMI)
-    
-        Assessment#bmi
-* User is provided with suggested caloric intake based on Health Goal
-
-        Assessment#caloric_intake
-* User is provided with suggested body fat percentage
-
-        Assessment#body_fat_percentage
-
-### Recovery
-
-### Log
-
-## CRUD Functionality, aka User Stories
-"." Designates class methods | "#" Designates instance methods
-
-### Create
-* User can create an account
-
-        User#create_account
-* User can create an instance of a pregnancy
-
-        AppCLI.create_pregnancy
-* User can create an instance of a MedicalProvider
+        WorkoutLog#total_duration
+* User is provided with WorkoutLog with highest amount of calories burned
         
-        User#create_medical_provider
+        WorkoutLog#highest_calories_burned
+* User is provided with WorkoutLog with longest duration
+
+        WorkoutLog#longest_duration
 #
-### Read
-* User can view all account information 
+### RecoveryLog
+* User is provided with total number of RecoveryLog entries
 
-        User#account_info
-* User can view all pregnancies specific to oneself
+        RecoveryLog#total_recoveries
+* User is provided with total duration of all RecoveryLogs
 
-        User#pregnancies
-* User can view all MedicalProviders specific to oneself
+        RecoveryLog#total_duration
 
-        User#medical_providers
-* User can view the pregnancies specific to the MedicalProvider
 
-        MedicalProvider#pregnancies
-* User can view information of a specific MedicalProvider
 
-        MedicalProvider#obgyn_profile_info
+* User is provided with total Relief Points
+* User is provided with 
+* Relief Points (up to 5)
+
 #
-### Update
-* User can update account information
-
-        User#update_account
-* User can update an instance of one's own Pregnancy information
-
-        User#update_pregnancy
-* User can update an instance of one's own MedicalProvider information
-
-        User#update_medical_provider
 #
-### Delete:
-* User can deactivate one's own account
 
-        User#deactivate_account
-* User can delete an instance of a Pregnancy speficic to oneself
+## Related Information
+<br/>
 
-        User#delete_pregnancy
-* User can delete an instance of a MedicalProvider specific to oneself
+### Video Demo:
+ [Video Demo Link](https://video.com/blahblahblah)
 
-        User#delete_medical_provider
+### Things Learned:
+* 
+
+### Difficulties:
+* 
+
+### Changes/Modifications/Additions:
+* 
+
+### Highlights
+* 
+
+#
+
+## Thank you! <br> Bree Warren and Abbosbek Muydinboev
+#
+#
 ## TO-DO LIST:
+
+monday (plan)
+- think of app name
+- clean up related information
+- complete technical and app description
+- finish 20 model methods on readme
+- add stretch goals to readme
+- build models, migrations, seeds, controllers, views
+
+tuesday (function)
+- work on model methods
+- work on controllers & show pages
+
+wednesday (dry code & aesthetics)
+- clean up navagation
+- work on simple login validation
+- DRY (partials, before_action, etc.)
+- authentificaion? cookies & sessions?
+- focus on HTML/CSS/Bootstrap
+
+thursday (finish up)
+- finish any back-or front end
+- finish things learned/highlights/difficulties, etc
+- create walkthrough to record
+
+friday (present)
+- record walkthrough
+- update readme with any changes
+- present
 
