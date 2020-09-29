@@ -1,16 +1,16 @@
-# app name.
+# active., by ambreea and abbosbek
 
 ### Technical Description: 
-A Command Line Interface App with CRUD functioning, incorporating:
+A Ruby on Rails web application with CRUD functioning and analytic features, incorporating:
+* MVC-based Architectural Framework Design (via Rails)
 * Object Relational Mapping (with ActiveRecord)
 * SQL Databases (using sqlite3)
 * Object Orientation Models (via Ruby)
-* User-Friendly Navigation (with TTY prompts)
 
 <br />
 
 ### App Description:
-The application is ....
+active. was inspired by its creators who believe in the importance of an agile, athletic lifestyle. With a series of features, including: Assessment, where one is able to gain knowledge regarding an individual's overall health, as well as WorkoutLogs/RecoveryLogs, which enables one to keep track of movement from a selection of our comprehensive list of options, a user has the ability to attain their health goals, regardless of experience level.
 #
 ## Instructions:
 ### Click [here](http://localhost:3000/) to begin the application!
@@ -91,7 +91,7 @@ The application is ....
 * Date
 
 * Duration
-* Relief Points (up to 5)
+* Recovery Points (up tp 5)
 * User ID
 * Recovery ID
 
@@ -211,10 +211,14 @@ The application is ....
         Assessment#water_intake
 #
 ### User
-* User is given achievement
-    
-        User#achievement
-* greeting
+* User is provided with a Workout accomplishment message upon logging 10 WorkoutLogs
+
+        User#workout_accomplishment
+
+* User is provided with a Recovery accomplishment message upon accumulation of 15 Recovery Points
+
+        User#recovery_accomplishment
+
 #
 ### WorkoutLog
 * User is provided with total number of WorkoutLog entries
@@ -232,6 +236,9 @@ The application is ....
 * User is provided with WorkoutLog with longest duration
 
         WorkoutLog#longest_duration
+* User is provided with total Workout Points
+
+        WorkoutLog#total_workout_points
 #
 ### RecoveryLog
 * User is provided with total number of RecoveryLog entries
@@ -240,16 +247,26 @@ The application is ....
 * User is provided with total duration of all RecoveryLogs
 
         RecoveryLog#total_duration
+* User is provided with RecoveryLog with longest duration
 
+        RecoveryLog#longest_duration
+* User is provided with total Recovery Points
 
-
-* User is provided with total Relief Points
-* User is provided with 
-* Relief Points (up to 5)
+        RecoveryLog#total_recovery_points
 
 #
 #
 
+## Stretch Goals
+* Use of Partials and Life Cycle Methods for DRY code
+
+* Login Validation
+* Points system for WorkoutLog and RecoveryLog
+* Ability for creationg of Custom Workouts and Recoveries
+* Default Dropdown Selection on New/Edit Forms
+* Cookies/Session integration
+
+#
 ## Related Information
 <br/>
 
@@ -277,13 +294,10 @@ The application is ....
 
 monday (plan)
 - think of app name
-- clean up related information
 - complete technical and app description
-- finish 20 model methods on readme
-- add stretch goals to readme
-- build models, migrations, seeds, controllers, views
 
 tuesday (function)
+- build models, migrations, seeds, controllers, views
 - work on model methods
 - work on controllers & show pages
 
