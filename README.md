@@ -18,12 +18,8 @@ active. was inspired by its creators who believe in the importance of an agile, 
 #
 #
 ## Models & Relationships
-<br>
 
         Assessment | User | WorkoutLog (Join Model) | Workout | RecoveryLog (Join Model) | Recovery
-
-### Assessment <br/>
-* An Assessment belongs to a User
 
 ### User <br/>
 * A User has many Assessments
@@ -42,6 +38,9 @@ active. was inspired by its creators who believe in the importance of an agile, 
 * A Recovery has many RecoveryLogs
 
 * A Recovery has many Users, through RecoveryLogs
+
+### Assessment <br/>
+* An Assessment belongs to a User
 
 ### WorkoutLog <br/>
 * A WorkoutLog belongs to a User
@@ -292,28 +291,27 @@ active. was inspired by its creators who believe in the importance of an agile, 
 #
 ## TO-DO LIST:
 
-monday (plan)
-- think of app name
-- complete technical and app description
+monday (planning) - DONE
 
-tuesday (function)
+tuesday (functionality)
 - build models, migrations, seeds, controllers, views
 - work on model methods
 - work on controllers & show pages
+- change name of rails lab, if possible
 
 wednesday (dry code & aesthetics)
 - clean up navagation
 - work on simple login validation
 - DRY (partials, before_action, etc.)
 - authentificaion? cookies & sessions?
-- focus on HTML/CSS/Bootstrap
+- front-end focus on HTML/CSS/Bootstrap
 
-thursday (finish up)
+thursday (finishing up)
 - finish any back-or front end
 - finish things learned/highlights/difficulties, etc
 - create walkthrough to record
 
-friday (present)
+friday (presenting)
 - record walkthrough
 - update readme with any changes
 - present
