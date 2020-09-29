@@ -1,18 +1,24 @@
-  [1m[36m (1.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
-  [1m[35m (0.1ms)[0m  select sqlite_version(*)
-  [1m[36m (1.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
-  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
-
-
-Started GET "/" for ::1 at 2015-11-16 16:12:00 -0600
-Processing by Rails::WelcomeController#index as HTML
-  Rendered /Users/admin/.rvm/gems/ruby-2.1.2/gems/railties-4.2.3/lib/rails/templates/rails/welcome/index.html.erb (1.9ms)
-Completed 200 OK in 48ms (Views: 36.7ms | ActiveRecord: 0.0ms)
-Started GET "/hello_world" for ::1 at 2020-09-20 05:41:41 -0500
+Started GET "/students" for ::1 at 2020-09-29 09:38:24 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
   
-ActionController::RoutingError (No route matches [GET] "/hello_world"):
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
   
-actionpack (5.0.7.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+activerecord (5.0.7.1) lib/active_record/migration.rb:573:in `check_pending!'
+activerecord (5.0.7.1) lib/active_record/migration.rb:549:in `call'
+actionpack (5.0.7.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.7.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.7.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.7.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.7.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.7.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.7.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
 actionpack (5.0.7.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
 railties (5.0.7.1) lib/rails/rack/logger.rb:36:in `call_app'
 railties (5.0.7.1) lib/rails/rack/logger.rb:24:in `block in call'
@@ -33,65 +39,27 @@ rack (2.0.6) lib/rack/handler/webrick.rb:86:in `service'
 /Users/admin/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
 /Users/admin/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
 /Users/admin/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
-  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (17.6ms)
   Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
-  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
-  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (9.7ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
   Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
-  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (12.0ms)
-  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (51.0ms)
-Started GET "/hello_world" for ::1 at 2020-09-20 05:42:58 -0500
-Processing by StaticController#hello_world as HTML
-Completed 406 Not Acceptable in 3ms (ActiveRecord: 0.0ms)
-
-
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.8ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (180.1ms)
+Started GET "/assessments" for ::1 at 2020-09-29 09:38:31 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
   
-ActionController::UnknownFormat (StaticController#hello_world is missing a template for this request format and variant.
+ActiveRecord::PendingMigrationError (
 
-request.formats: ["text/html"]
-request.variant: []
+Migrations are pending. To resolve this issue, run:
 
-NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+        bin/rails db:migrate RAILS_ENV=development
+
+):
   
-actionpack (5.0.7.1) lib/action_controller/metal/implicit_render.rb:56:in `default_render'
-actionpack (5.0.7.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
-actionpack (5.0.7.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
-actionpack (5.0.7.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
-actionpack (5.0.7.1) lib/abstract_controller/base.rb:188:in `process_action'
-actionpack (5.0.7.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
-actionpack (5.0.7.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:126:in `call'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:506:in `block (2 levels) in compile'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:455:in `call'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:101:in `__run_callbacks__'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:750:in `_run_process_action_callbacks'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
-actionpack (5.0.7.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
-actionpack (5.0.7.1) lib/action_controller/metal/rescue.rb:20:in `process_action'
-actionpack (5.0.7.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
-activesupport (5.0.7.1) lib/active_support/notifications.rb:164:in `block in instrument'
-activesupport (5.0.7.1) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
-activesupport (5.0.7.1) lib/active_support/notifications.rb:164:in `instrument'
-actionpack (5.0.7.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
-actionpack (5.0.7.1) lib/action_controller/metal/params_wrapper.rb:248:in `process_action'
-activerecord (5.0.7.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
-actionpack (5.0.7.1) lib/abstract_controller/base.rb:126:in `process'
-actionview (5.0.7.1) lib/action_view/rendering.rb:30:in `process'
-actionpack (5.0.7.1) lib/action_controller/metal.rb:190:in `dispatch'
-actionpack (5.0.7.1) lib/action_controller/metal.rb:262:in `dispatch'
-actionpack (5.0.7.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
-actionpack (5.0.7.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
-actionpack (5.0.7.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
-actionpack (5.0.7.1) lib/action_dispatch/journey/router.rb:26:in `each'
-actionpack (5.0.7.1) lib/action_dispatch/journey/router.rb:26:in `serve'
-actionpack (5.0.7.1) lib/action_dispatch/routing/route_set.rb:727:in `call'
-rack (2.0.6) lib/rack/etag.rb:25:in `call'
-rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
-rack (2.0.6) lib/rack/head.rb:12:in `call'
-rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
-rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
-actionpack (5.0.7.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
-activerecord (5.0.7.1) lib/active_record/migration.rb:553:in `call'
+activerecord (5.0.7.1) lib/active_record/migration.rb:573:in `check_pending!'
+activerecord (5.0.7.1) lib/active_record/migration.rb:549:in `call'
 actionpack (5.0.7.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
 activesupport (5.0.7.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
 activesupport (5.0.7.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
@@ -124,257 +92,23 @@ rack (2.0.6) lib/rack/handler/webrick.rb:86:in `service'
   Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
   Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
   Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
-  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
   Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
-  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
-  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.2ms)
-Started GET "/hello_world" for ::1 at 2020-09-20 05:44:56 -0500
-Processing by StaticController#hello_world as HTML
-Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
-
-
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (49.2ms)
+Started GET "/" for ::1 at 2020-09-29 09:38:47 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
   
-ActionView::MissingTemplate (Missing template static/hello_world, application/hello_world with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
-  * "/Users/admin/Flatiron/code/rails-hello-world-lab-hou01-seng-ft-082420/app/views"
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
 ):
   
-app/controllers/static_controller.rb:4:in `hello_world'
-  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout
-  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
-  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.4ms)
-  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
-  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
-  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
-  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
-  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (40.1ms)
-Started GET "/hello_world" for ::1 at 2020-09-20 05:47:57 -0500
-Processing by StaticController#hello_world as HTML
-Completed 406 Not Acceptable in 38ms (ActiveRecord: 0.0ms)
-
-
-  
-ActionController::UnknownFormat (StaticController#hello_world is missing a template for this request format and variant.
-
-request.formats: ["text/html"]
-request.variant: []
-
-NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
-  
-actionpack (5.0.7.1) lib/action_controller/metal/implicit_render.rb:56:in `default_render'
-actionpack (5.0.7.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
-actionpack (5.0.7.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
-actionpack (5.0.7.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
-actionpack (5.0.7.1) lib/abstract_controller/base.rb:188:in `process_action'
-actionpack (5.0.7.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
-actionpack (5.0.7.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:126:in `call'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:506:in `block (2 levels) in compile'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:455:in `call'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:101:in `__run_callbacks__'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:750:in `_run_process_action_callbacks'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
-actionpack (5.0.7.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
-actionpack (5.0.7.1) lib/action_controller/metal/rescue.rb:20:in `process_action'
-actionpack (5.0.7.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
-activesupport (5.0.7.1) lib/active_support/notifications.rb:164:in `block in instrument'
-activesupport (5.0.7.1) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
-activesupport (5.0.7.1) lib/active_support/notifications.rb:164:in `instrument'
-actionpack (5.0.7.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
-actionpack (5.0.7.1) lib/action_controller/metal/params_wrapper.rb:248:in `process_action'
-activerecord (5.0.7.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
-actionpack (5.0.7.1) lib/abstract_controller/base.rb:126:in `process'
-actionview (5.0.7.1) lib/action_view/rendering.rb:30:in `process'
-actionpack (5.0.7.1) lib/action_controller/metal.rb:190:in `dispatch'
-actionpack (5.0.7.1) lib/action_controller/metal.rb:262:in `dispatch'
-actionpack (5.0.7.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
-actionpack (5.0.7.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
-actionpack (5.0.7.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
-actionpack (5.0.7.1) lib/action_dispatch/journey/router.rb:26:in `each'
-actionpack (5.0.7.1) lib/action_dispatch/journey/router.rb:26:in `serve'
-actionpack (5.0.7.1) lib/action_dispatch/routing/route_set.rb:727:in `call'
-rack (2.0.6) lib/rack/etag.rb:25:in `call'
-rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
-rack (2.0.6) lib/rack/head.rb:12:in `call'
-rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
-rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
-actionpack (5.0.7.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
-activerecord (5.0.7.1) lib/active_record/migration.rb:553:in `call'
-actionpack (5.0.7.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
-actionpack (5.0.7.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
-actionpack (5.0.7.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
-actionpack (5.0.7.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
-actionpack (5.0.7.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
-actionpack (5.0.7.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
-railties (5.0.7.1) lib/rails/rack/logger.rb:36:in `call_app'
-railties (5.0.7.1) lib/rails/rack/logger.rb:24:in `block in call'
-activesupport (5.0.7.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
-activesupport (5.0.7.1) lib/active_support/tagged_logging.rb:26:in `tagged'
-activesupport (5.0.7.1) lib/active_support/tagged_logging.rb:69:in `tagged'
-railties (5.0.7.1) lib/rails/rack/logger.rb:24:in `call'
-sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.0.7.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
-rack (2.0.6) lib/rack/method_override.rb:22:in `call'
-rack (2.0.6) lib/rack/runtime.rb:22:in `call'
-activesupport (5.0.7.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
-actionpack (5.0.7.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
-actionpack (5.0.7.1) lib/action_dispatch/middleware/static.rb:136:in `call'
-rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
-railties (5.0.7.1) lib/rails/engine.rb:522:in `call'
-rack (2.0.6) lib/rack/handler/webrick.rb:86:in `service'
-/Users/admin/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
-/Users/admin/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
-/Users/admin/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
-  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
-  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
-  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.4ms)
-  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
-  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
-  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
-  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
-  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (33.9ms)
-Started GET "/hello_world" for ::1 at 2020-09-20 05:49:31 -0500
-Processing by StaticController#hello_world as HTML
-Completed 406 Not Acceptable in 4ms (ActiveRecord: 0.0ms)
-
-
-  
-ActionController::UnknownFormat (StaticController#hello_world is missing a template for this request format and variant.
-
-request.formats: ["text/html"]
-request.variant: []
-
-NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
-  
-actionpack (5.0.7.1) lib/action_controller/metal/implicit_render.rb:56:in `default_render'
-actionpack (5.0.7.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
-actionpack (5.0.7.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
-actionpack (5.0.7.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
-actionpack (5.0.7.1) lib/abstract_controller/base.rb:188:in `process_action'
-actionpack (5.0.7.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
-actionpack (5.0.7.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:126:in `call'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:506:in `block (2 levels) in compile'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:455:in `call'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:101:in `__run_callbacks__'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:750:in `_run_process_action_callbacks'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
-actionpack (5.0.7.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
-actionpack (5.0.7.1) lib/action_controller/metal/rescue.rb:20:in `process_action'
-actionpack (5.0.7.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
-activesupport (5.0.7.1) lib/active_support/notifications.rb:164:in `block in instrument'
-activesupport (5.0.7.1) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
-activesupport (5.0.7.1) lib/active_support/notifications.rb:164:in `instrument'
-actionpack (5.0.7.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
-actionpack (5.0.7.1) lib/action_controller/metal/params_wrapper.rb:248:in `process_action'
-activerecord (5.0.7.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
-actionpack (5.0.7.1) lib/abstract_controller/base.rb:126:in `process'
-actionview (5.0.7.1) lib/action_view/rendering.rb:30:in `process'
-actionpack (5.0.7.1) lib/action_controller/metal.rb:190:in `dispatch'
-actionpack (5.0.7.1) lib/action_controller/metal.rb:262:in `dispatch'
-actionpack (5.0.7.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
-actionpack (5.0.7.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
-actionpack (5.0.7.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
-actionpack (5.0.7.1) lib/action_dispatch/journey/router.rb:26:in `each'
-actionpack (5.0.7.1) lib/action_dispatch/journey/router.rb:26:in `serve'
-actionpack (5.0.7.1) lib/action_dispatch/routing/route_set.rb:727:in `call'
-rack (2.0.6) lib/rack/etag.rb:25:in `call'
-rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
-rack (2.0.6) lib/rack/head.rb:12:in `call'
-rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
-rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
-actionpack (5.0.7.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
-activerecord (5.0.7.1) lib/active_record/migration.rb:553:in `call'
-actionpack (5.0.7.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
-actionpack (5.0.7.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
-actionpack (5.0.7.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
-actionpack (5.0.7.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
-actionpack (5.0.7.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
-actionpack (5.0.7.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
-railties (5.0.7.1) lib/rails/rack/logger.rb:36:in `call_app'
-railties (5.0.7.1) lib/rails/rack/logger.rb:24:in `block in call'
-activesupport (5.0.7.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
-activesupport (5.0.7.1) lib/active_support/tagged_logging.rb:26:in `tagged'
-activesupport (5.0.7.1) lib/active_support/tagged_logging.rb:69:in `tagged'
-railties (5.0.7.1) lib/rails/rack/logger.rb:24:in `call'
-sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.0.7.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
-rack (2.0.6) lib/rack/method_override.rb:22:in `call'
-rack (2.0.6) lib/rack/runtime.rb:22:in `call'
-activesupport (5.0.7.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
-actionpack (5.0.7.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
-actionpack (5.0.7.1) lib/action_dispatch/middleware/static.rb:136:in `call'
-rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
-railties (5.0.7.1) lib/rails/engine.rb:522:in `call'
-rack (2.0.6) lib/rack/handler/webrick.rb:86:in `service'
-/Users/admin/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
-/Users/admin/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
-/Users/admin/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
-  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
-  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
-  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.5ms)
-  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
-  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
-  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
-  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
-  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.2ms)
-Started GET "/hello_world" for ::1 at 2020-09-20 05:49:33 -0500
-Processing by StaticController#hello_world as HTML
-Completed 406 Not Acceptable in 4ms (ActiveRecord: 0.0ms)
-
-
-  
-ActionController::UnknownFormat (StaticController#hello_world is missing a template for this request format and variant.
-
-request.formats: ["text/html"]
-request.variant: []
-
-NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
-  
-actionpack (5.0.7.1) lib/action_controller/metal/implicit_render.rb:56:in `default_render'
-actionpack (5.0.7.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
-actionpack (5.0.7.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
-actionpack (5.0.7.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
-actionpack (5.0.7.1) lib/abstract_controller/base.rb:188:in `process_action'
-actionpack (5.0.7.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
-actionpack (5.0.7.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:126:in `call'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:506:in `block (2 levels) in compile'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:455:in `call'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:101:in `__run_callbacks__'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:750:in `_run_process_action_callbacks'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
-actionpack (5.0.7.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
-actionpack (5.0.7.1) lib/action_controller/metal/rescue.rb:20:in `process_action'
-actionpack (5.0.7.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
-activesupport (5.0.7.1) lib/active_support/notifications.rb:164:in `block in instrument'
-activesupport (5.0.7.1) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
-activesupport (5.0.7.1) lib/active_support/notifications.rb:164:in `instrument'
-actionpack (5.0.7.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
-actionpack (5.0.7.1) lib/action_controller/metal/params_wrapper.rb:248:in `process_action'
-activerecord (5.0.7.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
-actionpack (5.0.7.1) lib/abstract_controller/base.rb:126:in `process'
-actionview (5.0.7.1) lib/action_view/rendering.rb:30:in `process'
-actionpack (5.0.7.1) lib/action_controller/metal.rb:190:in `dispatch'
-actionpack (5.0.7.1) lib/action_controller/metal.rb:262:in `dispatch'
-actionpack (5.0.7.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
-actionpack (5.0.7.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
-actionpack (5.0.7.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
-actionpack (5.0.7.1) lib/action_dispatch/journey/router.rb:26:in `each'
-actionpack (5.0.7.1) lib/action_dispatch/journey/router.rb:26:in `serve'
-actionpack (5.0.7.1) lib/action_dispatch/routing/route_set.rb:727:in `call'
-rack (2.0.6) lib/rack/etag.rb:25:in `call'
-rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
-rack (2.0.6) lib/rack/head.rb:12:in `call'
-rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
-rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
-actionpack (5.0.7.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
-activerecord (5.0.7.1) lib/active_record/migration.rb:553:in `call'
+activerecord (5.0.7.1) lib/active_record/migration.rb:573:in `check_pending!'
+activerecord (5.0.7.1) lib/active_record/migration.rb:549:in `call'
 actionpack (5.0.7.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
 activesupport (5.0.7.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
 activesupport (5.0.7.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
@@ -407,62 +141,23 @@ rack (2.0.6) lib/rack/handler/webrick.rb:86:in `service'
   Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
   Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.0ms)
   Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
-  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (10.4ms)
   Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
-  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
-  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (18.5ms)
-Started GET "/hello_world" for ::1 at 2020-09-20 05:49:34 -0500
-Processing by StaticController#hello_world as HTML
-Completed 406 Not Acceptable in 3ms (ActiveRecord: 0.0ms)
-
-
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (57.6ms)
+Started GET "/" for ::1 at 2020-09-29 09:38:52 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
   
-ActionController::UnknownFormat (StaticController#hello_world is missing a template for this request format and variant.
+ActiveRecord::PendingMigrationError (
 
-request.formats: ["text/html"]
-request.variant: []
+Migrations are pending. To resolve this issue, run:
 
-NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+        bin/rails db:migrate RAILS_ENV=development
+
+):
   
-actionpack (5.0.7.1) lib/action_controller/metal/implicit_render.rb:56:in `default_render'
-actionpack (5.0.7.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
-actionpack (5.0.7.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
-actionpack (5.0.7.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
-actionpack (5.0.7.1) lib/abstract_controller/base.rb:188:in `process_action'
-actionpack (5.0.7.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
-actionpack (5.0.7.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:126:in `call'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:506:in `block (2 levels) in compile'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:455:in `call'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:101:in `__run_callbacks__'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:750:in `_run_process_action_callbacks'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
-actionpack (5.0.7.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
-actionpack (5.0.7.1) lib/action_controller/metal/rescue.rb:20:in `process_action'
-actionpack (5.0.7.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
-activesupport (5.0.7.1) lib/active_support/notifications.rb:164:in `block in instrument'
-activesupport (5.0.7.1) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
-activesupport (5.0.7.1) lib/active_support/notifications.rb:164:in `instrument'
-actionpack (5.0.7.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
-actionpack (5.0.7.1) lib/action_controller/metal/params_wrapper.rb:248:in `process_action'
-activerecord (5.0.7.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
-actionpack (5.0.7.1) lib/abstract_controller/base.rb:126:in `process'
-actionview (5.0.7.1) lib/action_view/rendering.rb:30:in `process'
-actionpack (5.0.7.1) lib/action_controller/metal.rb:190:in `dispatch'
-actionpack (5.0.7.1) lib/action_controller/metal.rb:262:in `dispatch'
-actionpack (5.0.7.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
-actionpack (5.0.7.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
-actionpack (5.0.7.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
-actionpack (5.0.7.1) lib/action_dispatch/journey/router.rb:26:in `each'
-actionpack (5.0.7.1) lib/action_dispatch/journey/router.rb:26:in `serve'
-actionpack (5.0.7.1) lib/action_dispatch/routing/route_set.rb:727:in `call'
-rack (2.0.6) lib/rack/etag.rb:25:in `call'
-rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
-rack (2.0.6) lib/rack/head.rb:12:in `call'
-rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
-rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
-actionpack (5.0.7.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
-activerecord (5.0.7.1) lib/active_record/migration.rb:553:in `call'
+activerecord (5.0.7.1) lib/active_record/migration.rb:573:in `check_pending!'
+activerecord (5.0.7.1) lib/active_record/migration.rb:549:in `call'
 actionpack (5.0.7.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
 activesupport (5.0.7.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
 activesupport (5.0.7.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
@@ -493,214 +188,1435 @@ rack (2.0.6) lib/rack/handler/webrick.rb:86:in `service'
 /Users/admin/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
   Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
   Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
-  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.1ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.2ms)
   Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
-  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
   Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
   Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
-  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (21.9ms)
-Started GET "/hello_world" for ::1 at 2020-09-20 05:49:35 -0500
-Processing by StaticController#hello_world as HTML
-Completed 406 Not Acceptable in 3ms (ActiveRecord: 0.0ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.7ms)
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20200929142351)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "username" varchar, "password" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200929142351"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateAssessments (20200929142523)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "assessments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "age" integer, "sex" varchar, "height" integer, "weight" integer, "body_fat_percent" integer, "health_goal" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200929142523"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateWorkouts (20200929142632)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "workouts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "workout_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200929142632"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateRecoveries (20200929142657)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "recoveries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "recovery_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200929142657"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateWorkoutLogs (20200929142811)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "workout_logs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "date" varchar, "duration" integer, "calories_burned" integer, "user_id" integer, "workout_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200929142811"]]
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateRecoveryLogs (20200929143014)
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "recovery_logs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "date" varchar, "duration" integer, "recovery_points" integer, "user_id" integer, "recovery_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200929143014"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-09-29 14:50:28.642590"], ["updated_at", "2020-09-29 14:50:28.642590"]]
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Bree"], ["username", "ambreea.warren@gmail.com"], ["password", "3693"], ["created_at", "2020-09-29 15:52:27.853321"], ["updated_at", "2020-09-29 15:52:27.853321"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Abbo"], ["username", "muydinboevabbosbek@gmail.com"], ["password", "1234"], ["created_at", "2020-09-29 15:52:27.857054"], ["updated_at", "2020-09-29 15:52:27.857054"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "workouts" ("workout_type", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["workout_type", "Jogging"], ["created_at", "2020-09-29 15:52:27.986574"], ["updated_at", "2020-09-29 15:52:27.986574"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "workouts" ("workout_type", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["workout_type", "Swimming"], ["created_at", "2020-09-29 15:52:27.994127"], ["updated_at", "2020-09-29 15:52:27.994127"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "workouts" ("workout_type", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["workout_type", "Golf"], ["created_at", "2020-09-29 15:52:27.998423"], ["updated_at", "2020-09-29 15:52:27.998423"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "workouts" ("workout_type", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["workout_type", "Yoga"], ["created_at", "2020-09-29 15:52:28.002785"], ["updated_at", "2020-09-29 15:52:28.002785"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "workouts" ("workout_type", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["workout_type", "Strength Training"], ["created_at", "2020-09-29 15:52:28.009921"], ["updated_at", "2020-09-29 15:52:28.009921"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "workouts" ("workout_type", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["workout_type", "High Intensity Interval Training"], ["created_at", "2020-09-29 15:52:28.015844"], ["updated_at", "2020-09-29 15:52:28.015844"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "workouts" ("workout_type", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["workout_type", "Walking"], ["created_at", "2020-09-29 15:52:28.018540"], ["updated_at", "2020-09-29 15:52:28.018540"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "workouts" ("workout_type", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["workout_type", "Cycling"], ["created_at", "2020-09-29 15:52:28.022951"], ["updated_at", "2020-09-29 15:52:28.022951"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "workouts" ("workout_type", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["workout_type", "Basketball"], ["created_at", "2020-09-29 15:52:28.026147"], ["updated_at", "2020-09-29 15:52:28.026147"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "workouts" ("workout_type", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["workout_type", "Soccer"], ["created_at", "2020-09-29 15:52:28.028707"], ["updated_at", "2020-09-29 15:52:28.028707"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "workouts" ("workout_type", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["workout_type", "Boxing"], ["created_at", "2020-09-29 15:52:28.030840"], ["updated_at", "2020-09-29 15:52:28.030840"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[32mINSERT INTO "workouts" ("workout_type", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["workout_type", "Wrestling"], ["created_at", "2020-09-29 15:52:28.034885"], ["updated_at", "2020-09-29 15:52:28.034885"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "workouts" ("workout_type", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["workout_type", "Soccer"], ["created_at", "2020-09-29 15:52:28.043338"], ["updated_at", "2020-09-29 15:52:28.043338"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "workouts" ("workout_type", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["workout_type", "Martial Arts"], ["created_at", "2020-09-29 15:52:28.047741"], ["updated_at", "2020-09-29 15:52:28.047741"]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (9.3ms)[0m  [1m[32mINSERT INTO "workouts" ("workout_type", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["workout_type", "Cardio"], ["created_at", "2020-09-29 15:52:28.052861"], ["updated_at", "2020-09-29 15:52:28.052861"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "recoveries" ("recovery_type", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["recovery_type", "Foam Rolling"], ["created_at", "2020-09-29 15:52:28.087319"], ["updated_at", "2020-09-29 15:52:28.087319"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "recoveries" ("recovery_type", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["recovery_type", "Massage"], ["created_at", "2020-09-29 15:52:28.094692"], ["updated_at", "2020-09-29 15:52:28.094692"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "recoveries" ("recovery_type", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["recovery_type", "Ice Bath"], ["created_at", "2020-09-29 15:52:28.096536"], ["updated_at", "2020-09-29 15:52:28.096536"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "recoveries" ("recovery_type", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["recovery_type", "Stretching"], ["created_at", "2020-09-29 15:52:28.100483"], ["updated_at", "2020-09-29 15:52:28.100483"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "recoveries" ("recovery_type", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["recovery_type", "Epsom Salt Soak"], ["created_at", "2020-09-29 15:52:28.108257"], ["updated_at", "2020-09-29 15:52:28.108257"]]
+  [1m[35m (10.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "recoveries" ("recovery_type", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["recovery_type", "Sleeping"], ["created_at", "2020-09-29 15:52:28.127062"], ["updated_at", "2020-09-29 15:52:28.127062"]]
+  [1m[35m (13.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "assessments" ("age", "sex", "height", "weight", "body_fat_percent", "health_goal", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["age", 27], ["sex", "F"], ["height", 66], ["weight", 145], ["body_fat_percent", 20], ["health_goal", "Fat Loss"], ["user_id", 1], ["created_at", "2020-09-29 15:52:28.187040"], ["updated_at", "2020-09-29 15:52:28.187040"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "assessments" ("age", "sex", "height", "weight", "body_fat_percent", "health_goal", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["age", 23], ["sex", "M"], ["height", 71], ["weight", 165], ["body_fat_percent", 17], ["health_goal", "Muscle Gain"], ["user_id", 2], ["created_at", "2020-09-29 15:52:28.189756"], ["updated_at", "2020-09-29 15:52:28.189756"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "workout_logs" ("date", "duration", "calories_burned", "user_id", "workout_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["date", "09.29.2020"], ["duration", 45], ["calories_burned", 250], ["user_id", 1], ["workout_id", 4], ["created_at", "2020-09-29 15:52:28.209265"], ["updated_at", "2020-09-29 15:52:28.209265"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "workout_logs" ("date", "duration", "calories_burned", "user_id", "workout_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["date", "09.29.2020"], ["duration", 60], ["calories_burned", 500], ["user_id", 2], ["workout_id", 14], ["created_at", "2020-09-29 15:52:28.212364"], ["updated_at", "2020-09-29 15:52:28.212364"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "recovery_logs" ("date", "duration", "recovery_points", "user_id", "recovery_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["date", "09.29.2020"], ["duration", 30], ["recovery_points", 3], ["user_id", 1], ["recovery_id", 2], ["created_at", "2020-09-29 15:52:28.222468"], ["updated_at", "2020-09-29 15:52:28.222468"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "recovery_logs" ("date", "duration", "recovery_points", "user_id", "recovery_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["date", "09.29.2020"], ["duration", 480], ["recovery_points", 5], ["user_id", 2], ["recovery_id", 6], ["created_at", "2020-09-29 15:52:28.225687"], ["updated_at", "2020-09-29 15:52:28.225687"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for ::1 at 2020-09-29 11:34:19 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.1/lib/rails/templates/rails/welcome/index.html.erb (10.9ms)
+Completed 200 OK in 42ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/1" for ::1 at 2020-09-29 11:34:29 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 3002ms (Views: 2903.0ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/users" for ::1 at 2020-09-29 12:00:10 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 703ms (Views: 673.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users" for ::1 at 2020-09-29 12:00:23 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 86ms (Views: 84.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for ::1 at 2020-09-29 12:00:50 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 66ms (Views: 63.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for ::1 at 2020-09-29 12:01:13 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 68ms (Views: 66.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2020-09-29 12:01:25 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 59ms (Views: 57.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for ::1 at 2020-09-29 12:01:57 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 46ms (Views: 42.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2020-09-29 12:02:08 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 75ms (Views: 72.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2020-09-29 12:02:27 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 59ms (Views: 57.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for ::1 at 2020-09-29 12:02:34 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 62ms (Views: 60.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for ::1 at 2020-09-29 12:02:56 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 38ms (Views: 35.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for ::1 at 2020-09-29 12:03:05 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 140ms (Views: 136.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users" for ::1 at 2020-09-29 12:03:13 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 53ms (Views: 51.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2020-09-29 12:03:27 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 36ms (Views: 33.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for ::1 at 2020-09-29 12:03:33 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 31ms (Views: 29.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2020-09-29 12:03:50 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 60ms (Views: 56.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2020-09-29 12:04:07 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 50ms (Views: 47.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users" for ::1 at 2020-09-29 12:04:16 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 41ms (Views: 38.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users" for ::1 at 2020-09-29 12:04:38 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 51ms (Views: 49.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2020-09-29 12:04:52 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 106ms (Views: 101.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2020-09-29 12:04:58 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 63ms (Views: 59.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users" for ::1 at 2020-09-29 12:05:16 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 32ms (Views: 30.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2020-09-29 12:05:22 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 123ms (Views: 121.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2020-09-29 12:05:28 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 41ms (Views: 39.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2020-09-29 12:05:35 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 61ms (Views: 58.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2020-09-29 12:05:43 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 71ms (Views: 67.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2020-09-29 12:06:06 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 56ms (Views: 44.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users" for ::1 at 2020-09-29 12:06:17 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 46ms (Views: 43.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for ::1 at 2020-09-29 12:06:39 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 53ms (Views: 50.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2020-09-29 12:06:45 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 39ms (Views: 35.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for ::1 at 2020-09-29 12:06:50 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 73ms (Views: 70.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for ::1 at 2020-09-29 12:06:57 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 80ms (Views: 76.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for ::1 at 2020-09-29 12:09:38 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 41ms (Views: 39.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2020-09-29 12:14:59 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 68ms (Views: 66.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1" for ::1 at 2020-09-29 12:15:01 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 51ms (Views: 39.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for ::1 at 2020-09-29 12:15:26 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 35ms (Views: 33.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2020-09-29 12:16:02 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 37ms (Views: 34.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2020-09-29 12:17:20 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 45ms (Views: 38.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2020-09-29 12:17:22 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 39ms (Views: 37.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2020-09-29 12:17:33 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 48ms (Views: 46.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/new" for ::1 at 2020-09-29 12:26:37 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (28.5ms)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 1.3ms)
 
 
   
-ActionController::UnknownFormat (StaticController#hello_world is missing a template for this request format and variant.
-
-request.formats: ["text/html"]
-request.variant: []
-
-NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+ActionView::Template::Error (undefined method `form_with' for #<#<Class:0x00007fef953d36f0>:0x00007fef953d2548>
+Did you mean?  form_tag):
+    1: <h1> active. by ambreea | abbosbek <h1>
+    2: 
+    3: <h3> Create a New User: </h3>
+    4: <%=form_with model: @user do |f|%>
+    5: <p>First Name: <%= f.text_field :name%></p>
+    6: <p>Username (Email Address): <%= f.text_field :username%></p>
+    7: <p>Password: <%= f.text_field :password%></p>
   
-actionpack (5.0.7.1) lib/action_controller/metal/implicit_render.rb:56:in `default_render'
-actionpack (5.0.7.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
-actionpack (5.0.7.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
-actionpack (5.0.7.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
-actionpack (5.0.7.1) lib/abstract_controller/base.rb:188:in `process_action'
-actionpack (5.0.7.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
-actionpack (5.0.7.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:126:in `call'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:506:in `block (2 levels) in compile'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:455:in `call'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:101:in `__run_callbacks__'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:750:in `_run_process_action_callbacks'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
-actionpack (5.0.7.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
-actionpack (5.0.7.1) lib/action_controller/metal/rescue.rb:20:in `process_action'
-actionpack (5.0.7.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
-activesupport (5.0.7.1) lib/active_support/notifications.rb:164:in `block in instrument'
-activesupport (5.0.7.1) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
-activesupport (5.0.7.1) lib/active_support/notifications.rb:164:in `instrument'
-actionpack (5.0.7.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
-actionpack (5.0.7.1) lib/action_controller/metal/params_wrapper.rb:248:in `process_action'
-activerecord (5.0.7.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
-actionpack (5.0.7.1) lib/abstract_controller/base.rb:126:in `process'
-actionview (5.0.7.1) lib/action_view/rendering.rb:30:in `process'
-actionpack (5.0.7.1) lib/action_controller/metal.rb:190:in `dispatch'
-actionpack (5.0.7.1) lib/action_controller/metal.rb:262:in `dispatch'
-actionpack (5.0.7.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
-actionpack (5.0.7.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
-actionpack (5.0.7.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
-actionpack (5.0.7.1) lib/action_dispatch/journey/router.rb:26:in `each'
-actionpack (5.0.7.1) lib/action_dispatch/journey/router.rb:26:in `serve'
-actionpack (5.0.7.1) lib/action_dispatch/routing/route_set.rb:727:in `call'
-rack (2.0.6) lib/rack/etag.rb:25:in `call'
-rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
-rack (2.0.6) lib/rack/head.rb:12:in `call'
-rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
-rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
-actionpack (5.0.7.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
-activerecord (5.0.7.1) lib/active_record/migration.rb:553:in `call'
-actionpack (5.0.7.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
-activesupport (5.0.7.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
-actionpack (5.0.7.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
-actionpack (5.0.7.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
-actionpack (5.0.7.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
-actionpack (5.0.7.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
-actionpack (5.0.7.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
-railties (5.0.7.1) lib/rails/rack/logger.rb:36:in `call_app'
-railties (5.0.7.1) lib/rails/rack/logger.rb:24:in `block in call'
-activesupport (5.0.7.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
-activesupport (5.0.7.1) lib/active_support/tagged_logging.rb:26:in `tagged'
-activesupport (5.0.7.1) lib/active_support/tagged_logging.rb:69:in `tagged'
-railties (5.0.7.1) lib/rails/rack/logger.rb:24:in `call'
-sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.0.7.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
-rack (2.0.6) lib/rack/method_override.rb:22:in `call'
-rack (2.0.6) lib/rack/runtime.rb:22:in `call'
-activesupport (5.0.7.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
-actionpack (5.0.7.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
-actionpack (5.0.7.1) lib/action_dispatch/middleware/static.rb:136:in `call'
-rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
-railties (5.0.7.1) lib/rails/engine.rb:522:in `call'
-rack (2.0.6) lib/rack/handler/webrick.rb:86:in `service'
-/Users/admin/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
-/Users/admin/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
-/Users/admin/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+app/views/users/new.html.erb:4:in `_app_views_users_new_html_erb__3590144130937786067_70333488865080'
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.2ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (42.9ms)
+Started GET "/users/new" for ::1 at 2020-09-29 12:26:50 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (32.3ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `form_with' for #<#<Class:0x00007fef953d36f0>:0x00007fef95168fc8>
+Did you mean?  form_tag):
+    1: <h1> active. by ambreea | abbosbek <h1>
+    2: 
+    3: <h3> Create a New User: </h3>
+    4: <%=form_with model: @users do |f|%>
+    5: <p>First Name: <%= f.text_field :name%></p>
+    6: <p>Username (Email Address): <%= f.text_field :username%></p>
+    7: <p>Password: <%= f.text_field :password%></p>
+  
+app/views/users/new.html.erb:4:in `_app_views_users_new_html_erb__3590144130937786067_70333487601140'
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (12.0ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (100.6ms)
+Started GET "/users/new" for ::1 at 2020-09-29 12:27:07 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (28.9ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `form_with' for #<#<Class:0x00007fef953d36f0>:0x00007fef91f20e58>
+Did you mean?  form_tag):
+    1: <h1> active. by ambreea | abbosbek <h1>
+    2: 
+    3: <h3> Create a New User: </h3>
+    4: <%=form_with model: @user do |f|%>
+    5: <p>First Name: <%= f.text_field :name%></p>
+    6: <p>Username (Email Address): <%= f.text_field :username%></p>
+    7: <p>Password: <%= f.text_field :password%></p>
+  
+app/views/users/new.html.erb:4:in `_app_views_users_new_html_erb__3590144130937786067_70333461236600'
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.3ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (13.4ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (42.8ms)
+Started GET "/users/new" for ::1 at 2020-09-29 12:27:21 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (21.5ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `img_url' for #<User:0x00007fef97855f28>):
+     5: <p>First Name: <%= f.text_field :name%></p>
+     6: <p>Username (Email Address): <%= f.text_field :username%></p>
+     7: <p>Password: <%= f.text_field :password%></p>
+     8: <p>Profile Image URL Address: <%=f.text_field :img_url%>
+     9: <br>
+    10: <p><%= f.submit "Create User"%></p>
+    11: <%end%>
+  
+app/views/users/new.html.erb:8:in `block in _app_views_users_new_html_erb__3590144130937786067_70333508003280'
+app/views/users/new.html.erb:4:in `_app_views_users_new_html_erb__3590144130937786067_70333508003280'
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.7ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (41.5ms)
+Started GET "/users/new" for ::1 at 2020-09-29 12:27:43 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 61ms (Views: 58.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2020-09-29 12:28:07 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (35.6ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `form_with' for #<#<Class:0x00007fef953d36f0>:0x00007fef953f3d88>
+Did you mean?  form_tag):
+    1: <h1> active. by ambreea | abbosbek <h1>
+    2: 
+    3: <h3> Create a New User: </h3>
+    4: <%=form_with model: @user do |f|%>
+    5: <p>First Name: <%= f.text_field :name%></p>
+    6: <p>Username (Email Address): <%= f.text_field :username%></p>
+    7: <p>Password: <%= f.text_field :password%></p>
+  
+app/views/users/new.html.erb:4:in `_app_views_users_new_html_erb__3590144130937786067_70333500695320'
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.5ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.2ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (47.8ms)
+Started GET "/users/new" for ::1 at 2020-09-29 12:29:23 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 48ms (Views: 47.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-09-29 12:30:24 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/B9ok4X6cwE3sRVw4dDNr2U0HvAPVe2gybbCSwY0XpRYrYa/cr5s0KQYsI7nzGeZSPIEIuJyNzs0mK1pVOS5pQ==", "user"=>{"name"=>"Ambreea", "username"=>"ambreea.warren@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (25.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ambreea"], ["username", "ambreea.warren@gmail.com"], ["password", "1234"], ["created_at", "2020-09-29 17:30:24.467061"], ["updated_at", "2020-09-29 17:30:24.467061"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 50ms (ActiveRecord: 27.8ms)
+
+
+Started GET "/users/3" for ::1 at 2020-09-29 12:30:24 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 58ms (Views: 52.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/3" for ::1 at 2020-09-29 12:30:58 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 35ms (Views: 32.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/3" for ::1 at 2020-09-29 12:31:15 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 48ms (Views: 43.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/users/3" for ::1 at 2020-09-29 12:31:23 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 71ms (Views: 68.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/3" for ::1 at 2020-09-29 12:34:10 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/Users/admin/Flatiron/code/module-2-project/app/views/users/show.html.erb:20: syntax error, unexpected end-of-input, expecting end):
+  
+app/views/users/show.html.erb:20: syntax error, unexpected end-of-input, expecting end
   Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
   Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
-  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.3ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.2ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (15.8ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (51.2ms)
+Started GET "/users/3" for ::1 at 2020-09-29 12:34:41 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/Users/admin/Flatiron/code/module-2-project/app/views/users/show.html.erb:19: syntax error, unexpected end-of-input, expecting end):
+  
+app/views/users/show.html.erb:19: syntax error, unexpected end-of-input, expecting end
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.4ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (58.0ms)
+Started GET "/users/3" for ::1 at 2020-09-29 12:34:49 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 42ms (Views: 38.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/3" for ::1 at 2020-09-29 12:35:20 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (25.7ms)
+Completed 200 OK in 55ms (Views: 51.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/3" for ::1 at 2020-09-29 12:35:24 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 30ms (Views: 27.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/3" for ::1 at 2020-09-29 12:35:31 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 49ms (Views: 46.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/3" for ::1 at 2020-09-29 12:35:51 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 33ms (Views: 30.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1" for ::1 at 2020-09-29 12:36:41 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 39ms (Views: 36.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1" for ::1 at 2020-09-29 12:39:11 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 43ms (Views: 39.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1" for ::1 at 2020-09-29 12:39:13 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 39ms (Views: 36.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1" for ::1 at 2020-09-29 12:40:06 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 35ms (Views: 32.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/1" for ::1 at 2020-09-29 12:40:16 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mAssessment Load (0.8ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (63.8ms)
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 1.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `health_goal' for #<Assessment::ActiveRecord_Associations_CollectionProxy:0x00007fef97b45800>):
+    14: <br>
+    15: 
+    16: <h3>Assessments:</h3>
+    17: <%=@user.assessments.health_goal%>
+  
+app/views/users/show.html.erb:17:in `_app_views_users_show_html_erb__4316491480908489791_70333489468760'
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.5ms)
   Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
   Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
   Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
-  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
-  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (19.3ms)
-Started GET "/hello_world" for ::1 at 2020-09-20 05:52:17 -0500
-Processing by StaticController#hello_world as HTML
-Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (48.0ms)
+Started GET "/users/3" for ::1 at 2020-09-29 12:40:31 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (20.0ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.6ms)
 
 
   
-ActionView::MissingTemplate (Missing template static/hello_world, application/hello_world with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
-  * "/Users/admin/Flatiron/code/rails-hello-world-lab-hou01-seng-ft-082420/app/views"
-):
+ActionView::Template::Error (undefined method `assessment' for #<User:0x00007fef95293470>
+Did you mean?  assessments
+               assessments=):
+    14: <br>
+    15: 
+    16: <h3>Assessments:</h3>
+    17: <%=@user.assessment%>
   
-app/controllers/static_controller.rb:4:in `hello_world'
-  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout
+app/views/users/show.html.erb:17:in `_app_views_users_show_html_erb__4316491480908489791_70333488205780'
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
   Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
-  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.8ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.8ms)
   Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
-  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.5ms)
   Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
-  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
-  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (21.1ms)
-Started GET "/hello_world" for ::1 at 2020-09-20 05:53:18 -0500
-Processing by StaticController#hello_world as HTML
-  Rendering static/hello_world.html.erb within layouts/application
-  Rendered static/hello_world.html.erb within layouts/application (0.3ms)
-Completed 200 OK in 589ms (Views: 588.8ms | ActiveRecord: 0.0ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (34.7ms)
+Started GET "/users/3" for ::1 at 2020-09-29 12:40:40 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 75ms (Views: 34.5ms | ActiveRecord: 0.1ms)
 
 
-Started GET "/hello_world" for ::1 at 2020-09-20 05:53:32 -0500
-Processing by StaticController#hello_world as HTML
-  Rendering static/hello_world.html.erb within layouts/application
-  Rendered static/hello_world.html.erb within layouts/application (0.4ms)
-Completed 200 OK in 33ms (Views: 30.1ms | ActiveRecord: 0.0ms)
+Started GET "/users/3" for ::1 at 2020-09-29 12:40:52 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mAssessment Load (0.1ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered users/show.html.erb within layouts/application (6.6ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.3ms)
 
 
-Started GET "/hello_world" for ::1 at 2020-09-20 05:53:34 -0500
-Processing by StaticController#hello_world as HTML
-  Rendering static/hello_world.html.erb within layouts/application
-  Rendered static/hello_world.html.erb within layouts/application (1.3ms)
-Completed 200 OK in 42ms (Views: 40.4ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/hello_world" for ::1 at 2020-09-20 05:53:41 -0500
-Processing by StaticController#hello_world as HTML
-  Rendering static/hello_world.html.erb within layouts/application
-  Rendered static/hello_world.html.erb within layouts/application (0.4ms)
-Completed 200 OK in 44ms (Views: 41.5ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/students" for ::1 at 2020-09-28 11:25:35 -0500
   
-ActionController::RoutingError (No route matches [GET] "/students"):
+ActionView::Template::Error (undefined method `age' for #<ActiveRecord::Associations::CollectionProxy []>):
+    14: <br>
+    15: 
+    16: <h3>Assessments:</h3>
+    17: <%=@user.assessments.age%>
   
-actionpack (5.0.7.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
-actionpack (5.0.7.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
-railties (5.0.7.1) lib/rails/rack/logger.rb:36:in `call_app'
-railties (5.0.7.1) lib/rails/rack/logger.rb:24:in `block in call'
-activesupport (5.0.7.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
-activesupport (5.0.7.1) lib/active_support/tagged_logging.rb:26:in `tagged'
-activesupport (5.0.7.1) lib/active_support/tagged_logging.rb:69:in `tagged'
-railties (5.0.7.1) lib/rails/rack/logger.rb:24:in `call'
-sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.0.7.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
-rack (2.0.6) lib/rack/method_override.rb:22:in `call'
-rack (2.0.6) lib/rack/runtime.rb:22:in `call'
-activesupport (5.0.7.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
-actionpack (5.0.7.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
-actionpack (5.0.7.1) lib/action_dispatch/middleware/static.rb:136:in `call'
-rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
-railties (5.0.7.1) lib/rails/engine.rb:522:in `call'
-rack (2.0.6) lib/rack/handler/webrick.rb:86:in `service'
-/Users/admin/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
-/Users/admin/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
-/Users/admin/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
-  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+app/views/users/show.html.erb:17:in `_app_views_users_show_html_erb__4316491480908489791_70333487275380'
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.2ms)
   Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
-  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
-  Rendered collection of /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [1 times] (18.5ms)
-  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (11.7ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
   Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
-  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (9.6ms)
-  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (86.8ms)
-Started GET "/" for ::1 at 2020-09-28 11:25:36 -0500
-Processing by Rails::WelcomeController#index as HTML
-  Parameters: {"internal"=>true}
-  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.1/lib/rails/templates/rails/welcome/index.html.erb
-  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.1/lib/rails/templates/rails/welcome/index.html.erb (6.3ms)
-Completed 200 OK in 18ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (57.0ms)
+Started GET "/users/3" for ::1 at 2020-09-29 12:41:02 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 33ms (Views: 29.8ms | ActiveRecord: 0.1ms)
 
 
-Started GET "/hello_world" for ::1 at 2020-09-28 11:25:44 -0500
-Processing by StaticController#hello_world as HTML
-  Rendering static/hello_world.html.erb within layouts/application
-  Rendered static/hello_world.html.erb within layouts/application (0.4ms)
-Completed 200 OK in 595ms (Views: 593.0ms | ActiveRecord: 0.0ms)
+Started GET "/users/3" for ::1 at 2020-09-29 12:41:52 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mAssessment Load (0.1ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered users/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 50ms (Views: 47.5ms | ActiveRecord: 0.3ms)
 
 
-Started GET "/hello_world" for ::1 at 2020-09-28 11:36:12 -0500
-Processing by StaticController#hello_world as HTML
-  Rendering static/hello_world.html.erb within layouts/application
-  Rendered static/hello_world.html.erb within layouts/application (4.0ms)
-Completed 200 OK in 110ms (Views: 81.6ms | ActiveRecord: 0.0ms)
+Started GET "/users/3" for ::1 at 2020-09-29 12:41:59 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mAssessment Load (0.1ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered users/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 43ms (Views: 40.1ms | ActiveRecord: 0.2ms)
 
 
-Started GET "/" for ::1 at 2020-09-28 14:18:53 -0500
-Processing by Rails::WelcomeController#index as HTML
-  Parameters: {"internal"=>true}
-  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.1/lib/rails/templates/rails/welcome/index.html.erb
-  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.1/lib/rails/templates/rails/welcome/index.html.erb (22.6ms)
-Completed 200 OK in 103ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+Started GET "/users/3" for ::1 at 2020-09-29 12:42:09 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mAssessment Load (0.1ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered users/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 35ms (Views: 32.4ms | ActiveRecord: 0.2ms)
 
 
-Started GET "/hello_world" for ::1 at 2020-09-28 14:19:09 -0500
-Processing by StaticController#hello_world as HTML
-  Rendering static/hello_world.html.erb within layouts/application
-  Rendered static/hello_world.html.erb within layouts/application (1.1ms)
-Completed 200 OK in 498ms (Views: 493.6ms | ActiveRecord: 0.0ms)
+Started GET "/users/3" for ::1 at 2020-09-29 12:42:50 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mAssessment Load (0.1ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered users/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 65ms (Views: 62.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/3" for ::1 at 2020-09-29 12:43:04 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mAssessment Load (0.1ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered users/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 27ms (Views: 25.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/3" for ::1 at 2020-09-29 12:43:16 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mAssessment Load (0.1ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered users/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 38ms (Views: 35.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/3" for ::1 at 2020-09-29 12:44:14 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mAssessment Load (0.1ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered users/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 39ms (Views: 36.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/3" for ::1 at 2020-09-29 12:44:21 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mAssessment Load (0.1ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered users/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 29ms (Views: 27.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/3" for ::1 at 2020-09-29 12:44:46 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mAssessment Load (0.1ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered users/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 37ms (Views: 33.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/3" for ::1 at 2020-09-29 12:45:55 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 34ms (Views: 31.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/3" for ::1 at 2020-09-29 12:47:09 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 38ms (Views: 34.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2020-09-29 12:47:13 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 33ms (Views: 31.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/3" for ::1 at 2020-09-29 12:47:30 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"/workouts/index", :controller=>"users", :id=>"3"}):
+    31: <hr>
+    32: <br>
+    33: 
+    34: <p><%= button_to "View Workout Index", {action: "/workouts/index"}, method: :get %></p>
+    35: <p><%= button_to "View Recovery Index", {action: "index"}, method: :get %></p>
+  
+app/views/users/show.html.erb:34:in `_app_views_users_show_html_erb__4316491480908489791_70333509483020'
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.4ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (26.5ms)
+Started GET "/users/3" for ::1 at 2020-09-29 12:47:42 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 36ms (Views: 33.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/3" for ::1 at 2020-09-29 12:48:33 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 38ms (Views: 35.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/3" for ::1 at 2020-09-29 12:48:47 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 32ms (Views: 28.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/3" for ::1 at 2020-09-29 12:49:03 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 76ms (Views: 73.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/3" for ::1 at 2020-09-29 12:49:17 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 36ms (Views: 33.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/3" for ::1 at 2020-09-29 12:49:33 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 60ms (Views: 57.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users" for ::1 at 2020-09-29 13:06:32 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 83ms (Views: 65.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/3" for ::1 at 2020-09-29 13:06:34 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAssessment Load (0.2ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."user_id" = ?[0m  [["user_id", 3]]
+Completed 500 Internal Server Error in 36393ms (ActiveRecord: 1.3ms)
+
+
+  
+SystemExit (exit):
+  
+app/controllers/users_controller.rb:10:in `show'
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (357.4ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (62.2ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (17.2ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (494.2ms)
+Started GET "/users" for ::1 at 2020-09-29 13:07:15 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 311ms (Views: 298.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/1" for ::1 at 2020-09-29 13:07:17 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAssessment Load (0.2ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."user_id" = ?[0m  [["user_id", 1]]
+Started GET "/users/1" for ::1 at 2020-09-29 13:12:33 -0500
+Completed 500 Internal Server Error in 316238ms (ActiveRecord: 0.7ms)
+
+
+  
+SystemExit (exit):
+  
+app/controllers/users_controller.rb:10:in `show'
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 3211ms (ActiveRecord: 0.8ms)
+
+
+  
+SystemExit (exit):
+  
+app/controllers/users_controller.rb:10:in `show'
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (174.5ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (90.7ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (268.4ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (18.4ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (731.1ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (77.9ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.9ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (470.2ms)
+Started GET "/users" for ::1 at 2020-09-29 13:12:49 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (121.5ms)
+Completed 200 OK in 595ms (Views: 498.0ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/users/1" for ::1 at 2020-09-29 13:12:52 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (13.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mAssessment Load (0.7ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (240.8ms)
+Completed 200 OK in 589ms (Views: 548.2ms | ActiveRecord: 16.3ms)
+
+
+Started GET "/users/1" for ::1 at 2020-09-29 13:13:29 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mAssessment Load (0.3ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (43.5ms)
+Completed 200 OK in 361ms (Views: 330.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/1" for ::1 at 2020-09-29 13:13:44 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mAssessment Load (0.3ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (60.7ms)
+Completed 200 OK in 361ms (Views: 338.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assessments/1" for ::1 at 2020-09-29 13:13:47 -0500
+Processing by AssessmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering assessments/show.html.erb within layouts/application
+  Rendered assessments/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 241ms (Views: 232.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/1" for ::1 at 2020-09-29 13:14:09 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mAssessment Load (0.5ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (51.5ms)
+Completed 200 OK in 348ms (Views: 328.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/1" for ::1 at 2020-09-29 13:16:54 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mAssessment Load (0.3ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mWorkoutLog Load (1.1ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (354.6ms)
+Completed 500 Internal Server Error in 408ms (ActiveRecord: 6.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `workout_type' for 4:Integer):
+    24: 
+    25: <h3>Workout Logs:</h3>
+    26: <%@user.workout_logs.map do |workout_log| %>
+    27: <li><%= link_to workout_log.workout_id.workout_type, workout_log.date, workout_log%></li>
+    28: <%end%>
+    29: 
+    30: <br>
+  
+app/views/users/show.html.erb:27:in `block in _app_views_users_show_html_erb__4316491480908489791_70333459523860'
+app/views/users/show.html.erb:26:in `_app_views_users_show_html_erb__4316491480908489791_70333459523860'
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (201.2ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (62.0ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (17.9ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (331.1ms)
+Started GET "/users/1" for ::1 at 2020-09-29 13:17:12 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mAssessment Load (0.3ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mWorkoutLog Load (0.5ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (1117.2ms)
+Completed 500 Internal Server Error in 1240ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `stringify_keys' for #<WorkoutLog:0x00007fef9788c5a0>):
+    24: 
+    25: <h3>Workout Logs:</h3>
+    26: <%@user.workout_logs.map do |workout_log| %>
+    27: <li><%= link_to workout_log.workout_id, workout_log.date, workout_log%></li>
+    28: <%end%>
+    29: 
+    30: <br>
+  
+app/views/users/show.html.erb:27:in `block in _app_views_users_show_html_erb__4316491480908489791_70333500683700'
+app/views/users/show.html.erb:26:in `_app_views_users_show_html_erb__4316491480908489791_70333500683700'
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (198.6ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (53.9ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (21.8ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (318.8ms)
+Started GET "/users" for ::1 at 2020-09-29 13:17:53 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (20.2ms)
+Completed 200 OK in 334ms (Views: 321.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/1" for ::1 at 2020-09-29 13:17:54 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mAssessment Load (0.4ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mWorkoutLog Load (0.7ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (63.3ms)
+Completed 200 OK in 353ms (Views: 339.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/1" for ::1 at 2020-09-29 13:18:25 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mAssessment Load (0.3ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mWorkoutLog Load (0.8ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (91.0ms)
+Completed 200 OK in 385ms (Views: 342.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users/1" for ::1 at 2020-09-29 13:18:38 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mAssessment Load (0.7ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mWorkoutLog Load (0.3ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (264.0ms)
+Completed 500 Internal Server Error in 312ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `workout_type' for 4:Integer):
+    24: 
+    25: <h3>Workout Logs:</h3>
+    26: <%@user.workout_logs.map do |workout_log| %>
+    27: <li><%= link_to workout_log.workout_id.workout_type, workout_log%></li>
+    28: <%end%>
+    29: 
+    30: <br>
+  
+app/views/users/show.html.erb:27:in `block in _app_views_users_show_html_erb__4316491480908489791_70333462572940'
+app/views/users/show.html.erb:26:in `_app_views_users_show_html_erb__4316491480908489791_70333462572940'
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (212.8ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (58.8ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (24.0ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (369.0ms)
+Started GET "/users/1" for ::1 at 2020-09-29 13:22:06 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mAssessment Load (2.7ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mWorkoutLog Load (1.6ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (1122.4ms)
+Completed 500 Internal Server Error in 1669ms (ActiveRecord: 7.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `w' for #<WorkoutLog:0x00007fef979df8f8>):
+    24: 
+    25: <h3>Workout Logs:</h3>
+    26: <%@user.workout_logs.map do |workout_log| %>
+    27: <li><%= link_to workout_log.w, workout_log%></li>
+    28: <%end%>
+    29: 
+    30: <br>
+  
+app/views/users/show.html.erb:27:in `block in _app_views_users_show_html_erb__4316491480908489791_70333500861980'
+app/views/users/show.html.erb:26:in `_app_views_users_show_html_erb__4316491480908489791_70333500861980'
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (217.3ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (53.6ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (24.3ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (352.7ms)
+Started GET "/users/1" for ::1 at 2020-09-29 13:22:59 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mAssessment Load (0.3ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mWorkoutLog Load (0.5ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (99.9ms)
+Completed 200 OK in 432ms (Views: 399.8ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/users/1" for ::1 at 2020-09-29 13:25:43 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mAssessment Load (0.4ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mWorkoutLog Load (0.4ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mRecoveryLog Load (0.9ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs" WHERE "recovery_logs"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (222.7ms)
+Completed 200 OK in 567ms (Views: 517.4ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/users" for ::1 at 2020-09-29 13:43:06 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (60.2ms)
+Completed 200 OK in 433ms (Views: 410.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/2" for ::1 at 2020-09-29 13:43:20 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mAssessment Load (0.6ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mWorkoutLog Load (0.3ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mRecoveryLog Load (1.2ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs" WHERE "recovery_logs"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered users/show.html.erb within layouts/application (147.8ms)
+Completed 200 OK in 543ms (Views: 474.6ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/users/new" for ::1 at 2020-09-29 13:43:56 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (72.9ms)
+Completed 200 OK in 913ms (Views: 883.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/1" for ::1 at 2020-09-29 13:44:22 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mAssessment Load (0.6ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mWorkoutLog Load (0.3ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mRecoveryLog Load (0.4ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs" WHERE "recovery_logs"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (275.4ms)
+Completed 200 OK in 745ms (Views: 679.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assessments/1" for ::1 at 2020-09-29 13:44:29 -0500
+Processing by AssessmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering assessments/show.html.erb within layouts/application
+  Rendered assessments/show.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 305ms (Views: 280.6ms | ActiveRecord: 0.0ms)
 
 

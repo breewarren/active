@@ -1,0 +1,53 @@
+<h1> active. by ambreea | abbosbek <h1>
+
+<h3><%=@user.name%>'s Profile</h3>
+
+<p>Account Details:</p>
+<li>Name: <%=@user.name%></li>
+<li>Username: <%=@user.username%></li>
+<li>Password: <%=@user.password%></li>
+
+<p><%= button_to "Edit Profile", {action: "edit"}, method: :get %></p>
+
+<br>
+<hr>
+<br>
+
+<h3>Assessments:</h3>
+<%@user.assessments.map do |assessment| %>
+<li><%= link_to assessment.health_goal, assessment%></li>
+<%end%>
+
+<p><%= button_to "New Assessment", {action: "new"}, method: :get %></p>
+
+<br>
+<hr>
+<br>
+
+<h3>Workout Logs:</h3>
+<%@user.workout_logs.map do |workout_log| %>
+<li><%= link_to workout_log.date, workout_log%></li>
+<%end%>
+
+<p><%= button_to "New Workout Log", {action: "edit"}, method: :get %></p>
+
+
+<br>
+<hr>
+<br>
+
+<h3>Recovery Logs:</h3>
+<%@user.recovery_logs.map do |recovery_log| %>
+<li><%= link_to recovery_log.date, recovery_log%></li>
+<%end%>
+<br>
+<hr>
+<br>
+
+<p><%= button_to "Workout Index", {action: "index"}, method: :get %>
+<p><%= button_to "Recovery Index", {action: "index"}, method: :get %></p>
+<p><%= button_to "User Index", {action: "index"}, method: :get %></p>
+
+
+
+

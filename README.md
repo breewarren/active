@@ -7,6 +7,8 @@ A Ruby on Rails web application with CRUD functioning and analytic features, inc
 * SQL Databases (using sqlite3)
 * Object Orientation Models (via Ruby)
 
+* validations, authentications, authorizations, session/cookies
+
 <br />
 
 ### App Description:
@@ -69,7 +71,7 @@ active. was inspired by its creators who believe in the importance of an agile, 
 * Height (in inches)
 * Weight (in pounds)
 * Body Fat Percentage
-* Health Goal (Weight Loss, Weight Gain, or Maintenance)
+* Health Goal (Fat Loss, Muscle Gain, or Maintenance)
 * User ID
 
 ### Workout Table Properties
@@ -81,7 +83,7 @@ active. was inspired by its creators who believe in the importance of an agile, 
 ### Workout Log Table Properties
 * Date
 
-* Duration
+* Duration (in minutes)
 * Calories Burned
 * User ID
 * Workout ID
@@ -89,7 +91,7 @@ active. was inspired by its creators who believe in the importance of an agile, 
 ### Recovery Log Table Properties
 * Date
 
-* Duration
+* Duration (in minutes)
 * Recovery Points (up tp 5)
 * User ID
 * Recovery ID
@@ -307,6 +309,7 @@ wednesday (dry code & aesthetics)
 - front-end focus on HTML/CSS/Bootstrap
 
 thursday (finishing up)
+- specify route resources
 - finish any back-or front end
 - finish things learned/highlights/difficulties, etc
 - create walkthrough to record

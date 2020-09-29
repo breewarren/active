@@ -1,0 +1,9 @@
+<h1> active. by ambreea | abbosbek <h1>
+
+<h3> User Index </h3>
+
+<%@users.each do |user|%>
+<li><%=link_to user.name, user%></li>
+<%end%>
+
+<p><%= button_to "Create New User", {action: "new"}, method: :get %></p>

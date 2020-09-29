@@ -1,0 +1,2 @@
+module RecoveryLogsHelper
+end

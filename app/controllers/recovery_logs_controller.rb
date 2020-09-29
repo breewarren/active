@@ -1,0 +1,4 @@
+class RecoveryLogsController < ApplicationController
+
+    
+end
