@@ -266,6 +266,7 @@ active. was inspired by its creators who believe in the importance of an agile, 
 * Ability for creationg of Custom Workouts and Recoveries
 * Default Dropdown Selection on New/Edit Forms
 * Cookies/Session integration
+* Links to Details on Workouts and Recoveries
 
 #
 ## Related Information
