@@ -2,6 +2,7 @@ class Assessment < ApplicationRecord
     
     belongs_to :user
 
+    #calculations and recommendations based on assessment attributes
     def current_bmi
         @current_bmi = (self.weight * 703) / (self.height**2)
     end

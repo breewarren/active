@@ -14,3 +14,24 @@ Successful: <%= notice %>
 <li>Calories Burned: <%=@workout_log.calories_burned%> calories</li>
 
 <p><%= button_to "Edit WorkoutLog", {controller: "workout_logs", action: "edit"}, method: :get %></p>
+<br>
+<hr>
+<h4>Favorite Workout</h4>
+<li>Your favorite workout to enter into a WorkoutLog is <b><%=@workout_log.user.favorite_workout%></b></li>
+<hr>
+<h4>WorkoutLog Totals</h4>
+<li>Total Workout Logs: You've entered a total of <b><%=@workout_log.user.total_workout_count%></b> WorkoutLogs</li>
+<li>Total Calories Burned: You've burned a total of <b><%=@workout_log.user.total_calories_burned%></b> calories</li>
+<li>Total Duration: You've been active for a total of <b><%=@workout_log.user.total_duration%></b> minutes</li>
+<br>
+<hr>
+<h4>WorkoutLog Averages</h4>
+<li>Average Calories Burned: You've burned an average of <b><%=@workout_log.user.average_calories_burned%></b> calories</li>
+<li>Average Duration: You've been active for an average of <b><%=@workout_log.user.average_duration%></b> minutes</li>
+<br>
+<hr>
+<h4>WorkoutLog Streaks</h4>
+<li>Highest Calorie Burn: The Workout Log with the most calories burned was for <b><%=@workout_log.user.highest_calories_burned%></b> calories</li>
+<li>Longest Duration: The Workout Log with the longest duration was for <b><%=@workout_log.user.longest_duration%></b> minutes</li>
+
+

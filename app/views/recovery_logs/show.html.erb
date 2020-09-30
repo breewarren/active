@@ -14,3 +14,18 @@ Successful: <%= notice %>
 <li>Recovery Points: <%=@recovery_log.recovery_points%></li>
 
 <p><%= button_to "Edit RecoveryLog", {controller: "recovery_logs", action: "edit"}, method: :get %></p>
+<br>
+<hr>
+<h4>Favorite Recovery</h4>
+<li>Your favorite recovery to enter into a RecoveryLog is <b><%=@recovery_log.user.favorite_recovery%></b></li>
+<hr>
+<h4>RecoveryLog Totals</h4>
+<li>Total Recovery Logs: You've entered a total of <b><%=@recovery_log.user.total_recovery_count%></b> RecoveryLogs</li>
+<li>Total Recovery Points: You've accumulated a total of <b><%=@recovery_log.user.total_recovery_points%></b> Recovery Points</li>
+<li>Total Duration: You've recovered for a total of <b><%=@recovery_log.user.total_recovery_duration%></b> minutes</li>
+<br>
+<hr>
+<h4>RecoveryLog Average & Streak</h4>
+<li>Average Duration: You've averaged <b><%=@recovery_log.user.average_recovery_duration%></b> minutes of Recovery</li>
+<li>Longest Duration: The RecoveryLog with the longest duration was for <b><%=@recovery_log.user.longest_recovery_duration%></b> minutes</li>
+

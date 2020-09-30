@@ -9229,3 +9229,1355 @@ Processing by AssessmentsController#show as HTML
 Completed 200 OK in 94ms (Views: 89.3ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/workout_logs/3" for ::1 at 2020-09-30 00:41:03 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WorkoutLogsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mWorkoutLog Load (0.6ms)[0m  [1m[34mSELECT  "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering workout_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.6ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendered workout_logs/show.html.erb within layouts/application (74.8ms)
+Completed 500 Internal Server Error in 118ms (ActiveRecord: 3.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `total_workout_logs' for nil:NilClass):
+    17: <hr>
+    18: <h4>Overall Workout Log Progression</h4>
+    19: 
+    20: <%=@user.total_workout_logs%>
+  
+app/views/workout_logs/show.html.erb:20:in `_app_views_workout_logs_show_html_erb___3773217634120027870_70202300221980'
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (43.1ms)
+Started GET "/workout_logs/3" for ::1 at 2020-09-30 00:41:29 -0500
+Processing by WorkoutLogsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mWorkoutLog Load (0.3ms)[0m  [1m[34mSELECT  "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering workout_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.1ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendered workout_logs/show.html.erb within layouts/application (33.7ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `all' for #<WorkoutLog:0x00007fb27b32a728>):
+    17: <hr>
+    18: <h4>Overall Workout Log Progression</h4>
+    19: 
+    20: <%=@workout_log.total_workout_logs%>
+  
+app/models/workout_log.rb:7:in `total_workout_logs'
+app/views/workout_logs/show.html.erb:20:in `_app_views_workout_logs_show_html_erb___3773217634120027870_70202273909340'
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (11.2ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (35.8ms)
+Started GET "/workout_logs/3" for ::1 at 2020-09-30 00:42:01 -0500
+Processing by WorkoutLogsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mWorkoutLog Load (0.3ms)[0m  [1m[34mSELECT  "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering workout_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.3ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  Rendered workout_logs/show.html.erb within layouts/application (66.1ms)
+Completed 200 OK in 533ms (Views: 506.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/workout_logs/3" for ::1 at 2020-09-30 00:42:28 -0500
+Processing by WorkoutLogsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT  "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering workout_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.2ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mWorkoutLog Load (0.8ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  Rendered workout_logs/show.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 101ms (Views: 92.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users" for ::1 at 2020-09-30 00:43:20 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 52ms (Views: 42.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/7" for ::1 at 2020-09-30 00:43:22 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mRecoveryLog Load (0.7ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mAssessment Load (1.8ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."user_id" = ?[0m  [["user_id", 7]]
+  [1m[36mWorkoutLog Load (0.4ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."user_id" = ?[0m  [["user_id", 7]]
+  [1m[36mWorkout Load (0.3ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mRecoveryLog Load (1.2ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs" WHERE "recovery_logs"."user_id" = ?[0m  [["user_id", 7]]
+  [1m[36mRecovery Load (0.2ms)[0m  [1m[34mSELECT  "recoveries".* FROM "recoveries" WHERE "recoveries"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (207.3ms)
+Completed 200 OK in 255ms (Views: 241.5ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/workout_logs/3" for ::1 at 2020-09-30 00:43:24 -0500
+Processing by WorkoutLogsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mWorkoutLog Load (0.8ms)[0m  [1m[34mSELECT  "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering workout_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.1ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mWorkout Load (0.3ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+Started GET "/workout_logs/3" for ::1 at 2020-09-30 05:43:06 -0500
+Started GET "/workout_logs/3" for ::1 at 2020-09-30 05:43:10 -0500
+  Rendered workout_logs/show.html.erb within layouts/application (17985855.4ms)
+Completed 500 Internal Server Error in 17985869ms (ActiveRecord: 1.5ms)
+
+
+  
+SystemExit (exit):
+  
+app/models/workout_log.rb:12:in `total_workout_count'
+app/views/workout_logs/show.html.erb:20:in `_app_views_workout_logs_show_html_erb___3773217634120027870_70202322350240'
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (425.4ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (55.5ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (53.5ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (610.6ms)
+Processing by WorkoutLogsController#show as HTML
+  Parameters: {"id"=>"3"}
+Processing by WorkoutLogsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mWorkoutLog Load (0.8ms)[0m  [1m[34mSELECT  "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWorkoutLog Load (11.7ms)[0m  [1m[34mSELECT  "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering workout_logs/show.html.erb within layouts/application
+  Rendering workout_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.6ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendered workout_logs/show.html.erb within layouts/application (234.7ms)
+  [1m[36mWorkout Load (0.4ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendered workout_logs/show.html.erb within layouts/application (254.1ms)
+Completed 200 OK in 771ms (Views: 654.1ms | ActiveRecord: 8.4ms)
+
+
+Completed 200 OK in 794ms (Views: 674.4ms | ActiveRecord: 12.9ms)
+
+
+Started GET "/workout_logs/3" for ::1 at 2020-09-30 05:53:01 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WorkoutLogsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mWorkoutLog Load (0.4ms)[0m  [1m[34mSELECT  "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering workout_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.4ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendered workout_logs/show.html.erb within layouts/application (70.0ms)
+Completed 500 Internal Server Error in 125ms (ActiveRecord: 3.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `total_workout_counttotal_workout_count' for #<User:0x00007f8a06ccef60>):
+    17: <hr>
+    18: <h4>WorkoutLog Progression</h4>
+    19: 
+    20: <%=@workout_log.user.total_workout_counttotal_workout_count%>
+  
+app/views/workout_logs/show.html.erb:20:in `_app_views_workout_logs_show_html_erb__3024742747268875884_70115425177220'
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.0ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (36.7ms)
+Started GET "/workout_logs/3" for ::1 at 2020-09-30 05:53:30 -0500
+Processing by WorkoutLogsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mWorkoutLog Load (0.1ms)[0m  [1m[34mSELECT  "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering workout_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.1ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  Rendered workout_logs/show.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 453ms (Views: 450.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/workout_logs/3" for ::1 at 2020-09-30 05:55:01 -0500
+Processing by WorkoutLogsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT  "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering workout_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.2ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mWorkoutLog Load (0.1ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  Rendered workout_logs/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 34ms (Views: 30.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/workout_logs/3" for ::1 at 2020-09-30 05:55:20 -0500
+Processing by WorkoutLogsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mWorkoutLog Load (0.1ms)[0m  [1m[34mSELECT  "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering workout_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.1ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mWorkoutLog Load (8.4ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  Rendered workout_logs/show.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 56ms (Views: 45.4ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/workout_logs/3" for ::1 at 2020-09-30 05:55:44 -0500
+Processing by WorkoutLogsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mWorkoutLog Load (0.1ms)[0m  [1m[34mSELECT  "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering workout_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.2ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  Rendered workout_logs/show.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 64ms (Views: 61.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/workout_logs/3" for ::1 at 2020-09-30 05:56:07 -0500
+Processing by WorkoutLogsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT  "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering workout_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.1ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  Rendered workout_logs/show.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 50ms (Views: 46.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/workout_logs/3" for ::1 at 2020-09-30 05:57:27 -0500
+Processing by WorkoutLogsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT  "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering workout_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.2ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mWorkoutLog Load (0.4ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  Rendered workout_logs/show.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 44ms (Views: 38.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/workout_logs/3" for ::1 at 2020-09-30 05:58:14 -0500
+Processing by WorkoutLogsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mWorkoutLog Load (0.1ms)[0m  [1m[34mSELECT  "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering workout_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.2ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mWorkoutLog Load (0.3ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  Rendered workout_logs/show.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 37ms (Views: 34.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/workout_logs/3" for ::1 at 2020-09-30 05:59:29 -0500
+Processing by WorkoutLogsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mWorkoutLog Load (0.5ms)[0m  [1m[34mSELECT  "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering workout_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.7ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mWorkoutLog Load (0.1ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  Rendered workout_logs/show.html.erb within layouts/application (66.8ms)
+Completed 200 OK in 118ms (Views: 90.0ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/workout_logs/3" for ::1 at 2020-09-30 05:59:50 -0500
+Processing by WorkoutLogsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT  "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering workout_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.1ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  Rendered workout_logs/show.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 45ms (Views: 41.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/workout_logs/3" for ::1 at 2020-09-30 06:01:13 -0500
+Processing by WorkoutLogsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mWorkoutLog Load (0.5ms)[0m  [1m[34mSELECT  "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering workout_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.5ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  Rendered workout_logs/show.html.erb within layouts/application (40.4ms)
+Completed 200 OK in 114ms (Views: 90.8ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/instructors" for ::1 at 2020-09-30 06:01:37 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/instructors"):
+  
+actionpack (5.0.7.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.7.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7.1) lib/rails/engine.rb:522:in `call'
+rack (2.0.6) lib/rack/handler/webrick.rb:86:in `service'
+/Users/admin/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/admin/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/admin/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered collection of /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [48 times] (22.8ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (15.1ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (82.6ms)
+Started GET "/isers" for ::1 at 2020-09-30 06:01:39 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/isers"):
+  
+actionpack (5.0.7.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.7.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7.1) lib/rails/engine.rb:522:in `call'
+rack (2.0.6) lib/rack/handler/webrick.rb:86:in `service'
+/Users/admin/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/admin/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/admin/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered collection of /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [48 times] (18.6ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.4ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (68.2ms)
+Started GET "/users" for ::1 at 2020-09-30 06:01:43 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 62ms (Views: 59.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/7" for ::1 at 2020-09-30 06:01:44 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mWorkoutLog Load (0.3ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mRecoveryLog Load (0.8ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mAssessment Load (0.4ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."user_id" = ?[0m  [["user_id", 7]]
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."user_id" = ?[0m  [["user_id", 7]]
+  [1m[36mWorkout Load (0.1ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mRecoveryLog Load (0.2ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs" WHERE "recovery_logs"."user_id" = ?[0m  [["user_id", 7]]
+  [1m[36mRecovery Load (0.5ms)[0m  [1m[34mSELECT  "recoveries".* FROM "recoveries" WHERE "recoveries"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (108.8ms)
+Completed 200 OK in 136ms (Views: 127.1ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/workout_logs/new" for ::1 at 2020-09-30 06:01:49 -0500
+Processing by WorkoutLogsController#new as HTML
+  Rendering workout_logs/new.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mWorkout Load (0.2ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  Rendered workout_logs/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 44ms (Views: 40.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/workout_logs" for ::1 at 2020-09-30 06:02:09 -0500
+Processing by WorkoutLogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xJEy+iBKcdut5DBGeyvn2rnve6svqlylPHGAqPd/PvhgI9zW1w5uCj5Nlbh9N03slClhecKNhj7BX++Kpa/ZyQ==", "workout_log"=>{"user_id"=>"7", "workout_id"=>"21", "date"=>"", "duration"=>"30", "calories_burned"=>"300"}, "commit"=>"Create WorkoutLog"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "workout_logs" ("date", "duration", "calories_burned", "user_id", "workout_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["date", ""], ["duration", 30], ["calories_burned", 300], ["user_id", 7], ["workout_id", 21], ["created_at", "2020-09-30 11:02:09.967494"], ["updated_at", "2020-09-30 11:02:09.967494"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/workout_logs/6
+Completed 302 Found in 9ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/workout_logs/6" for ::1 at 2020-09-30 06:02:10 -0500
+Processing by WorkoutLogsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT  "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering workout_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.3ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mWorkoutLog Load (0.3ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  Rendered workout_logs/show.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 36ms (Views: 32.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/workout_logs/6/edit" for ::1 at 2020-09-30 06:02:17 -0500
+Processing by WorkoutLogsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT  "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering workout_logs/edit.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mWorkout Load (0.2ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  Rendered workout_logs/edit.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 35ms (Views: 30.9ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/workout_logs/6" for ::1 at 2020-09-30 06:02:23 -0500
+Processing by WorkoutLogsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G2CnJwETdVn6ysJRKVl/Vr3AycnCGq0dZhnp1IRESLe/0kkL9ldqiGljZ68vRdVgkAbTGy89d4abN4b21pSvhg==", "workout_log"=>{"user_id"=>"7", "workout_id"=>"21", "date"=>"2020-09-15", "duration"=>"30", "calories_burned"=>"300"}, "commit"=>"Update WorkoutLog", "id"=>"6"}
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT  "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "workout_logs" SET "date" = ?, "updated_at" = ? WHERE "workout_logs"."id" = ?[0m  [["date", "2020-09-15"], ["updated_at", "2020-09-30 11:02:23.176864"], ["id", 6]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/workout_logs/6
+Completed 302 Found in 8ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/workout_logs/6" for ::1 at 2020-09-30 06:02:23 -0500
+Processing by WorkoutLogsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mWorkoutLog Load (0.5ms)[0m  [1m[34mSELECT  "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering workout_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.1ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mWorkoutLog Load (0.1ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  Rendered workout_logs/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 33ms (Views: 28.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/workout_logs/6" for ::1 at 2020-09-30 06:03:13 -0500
+Processing by WorkoutLogsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT  "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering workout_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.2ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  Rendered workout_logs/show.html.erb within layouts/application (40.4ms)
+Completed 200 OK in 100ms (Views: 72.5ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/workout_logs/6" for ::1 at 2020-09-30 06:04:59 -0500
+Processing by WorkoutLogsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT  "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering workout_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.1ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  Rendered workout_logs/show.html.erb within layouts/application (43.9ms)
+Completed 200 OK in 123ms (Views: 74.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/workout_logs/6" for ::1 at 2020-09-30 06:09:49 -0500
+Processing by WorkoutLogsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT  "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering workout_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.2ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (2.3ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  Rendered workout_logs/show.html.erb within layouts/application (76.7ms)
+Completed 200 OK in 142ms (Views: 120.3ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/workout_logs/6" for ::1 at 2020-09-30 06:11:01 -0500
+Processing by WorkoutLogsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mWorkoutLog Load (0.1ms)[0m  [1m[34mSELECT  "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering workout_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.2ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  Rendered workout_logs/show.html.erb within layouts/application (49.1ms)
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 2.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `total_workout_logs' for #<User:0x00007f8a0ac64558>
+Did you mean?  total_workout_count):
+    26: <hr>
+    27: <h4>WorkoutLog Streaks</h4>
+    28: <li>Highest Calorie Burn: The Workout Log with the most calories burned was for <b><%=@workout_log.user.highest_calories_burned%></b> calories</li>
+    29: <li>Longest Duration: The Workout Log with the lognest duration was for <b><%=@workout_log.user.longest_duration%></b> minutes</li>
+  
+app/models/user.rb:51:in `longest_duration'
+app/views/workout_logs/show.html.erb:29:in `_app_views_workout_logs_show_html_erb__3024742747268875884_70115475664720'
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.3ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (29.6ms)
+Started GET "/workout_logs/6" for ::1 at 2020-09-30 06:11:37 -0500
+Processing by WorkoutLogsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT  "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering workout_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.2ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  Rendered workout_logs/show.html.erb within layouts/application (35.4ms)
+Completed 200 OK in 77ms (Views: 59.1ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/workout_logs/6" for ::1 at 2020-09-30 06:13:26 -0500
+Processing by WorkoutLogsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT  "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering workout_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.2ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mWorkoutLog Load (0.3ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (4.9ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.2ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  Rendered workout_logs/show.html.erb within layouts/application (31.1ms)
+Completed 200 OK in 77ms (Views: 67.1ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/workout_logs/6" for ::1 at 2020-09-30 06:14:45 -0500
+Processing by WorkoutLogsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT  "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering workout_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.1ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  Rendered workout_logs/show.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 43ms (Views: 38.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/recovery_logs/6" for ::1 at 2020-09-30 06:15:11 -0500
+Processing by RecoveryLogsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mRecoveryLog Load (0.2ms)[0m  [1m[34mSELECT  "recovery_logs".* FROM "recovery_logs" WHERE "recovery_logs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 6ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find RecoveryLog with 'id'=6):
+  
+app/controllers/recovery_logs_controller.rb:4:in `show'
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.7ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (31.9ms)
+Started GET "/recovery_logs/2" for ::1 at 2020-09-30 06:15:15 -0500
+Processing by RecoveryLogsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRecoveryLog Load (0.1ms)[0m  [1m[34mSELECT  "recovery_logs".* FROM "recovery_logs" WHERE "recovery_logs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find RecoveryLog with 'id'=2):
+  
+app/controllers/recovery_logs_controller.rb:4:in `show'
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (11.1ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (19.7ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (111.4ms)
+Started GET "/recovery_logs/3" for ::1 at 2020-09-30 06:15:18 -0500
+Processing by RecoveryLogsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRecoveryLog Load (0.1ms)[0m  [1m[34mSELECT  "recovery_logs".* FROM "recovery_logs" WHERE "recovery_logs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering recovery_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mRecovery Load (0.2ms)[0m  [1m[34mSELECT  "recoveries".* FROM "recoveries" WHERE "recoveries"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered recovery_logs/show.html.erb within layouts/application (21.9ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `user' for nil:NilClass
+Did you mean?  super):
+    18: <hr>
+    19: <h4>RecoveryLog Totals</h4>
+    20: 
+    21: <li>Total Workout Logs: You've entered a total of <b><%=@workout_log.user.total_workout_count%></b> WorkoutLogs</li>
+    22: <li>Total Calories Burned: You've burned a total of <b><%=@workout_log.user.total_calories_burned%></b> calories</li>
+    23: <li>Total Duration: You've been active for a total of <b><%=@workout_log.user.total_duration%></b> minutes</li>
+    24: <br>
+  
+app/views/recovery_logs/show.html.erb:21:in `_app_views_recovery_logs_show_html_erb__2738721611552272229_70115467913720'
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.1ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (26.5ms)
+Started GET "/recovery_logs/3" for ::1 at 2020-09-30 06:15:34 -0500
+Processing by RecoveryLogsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRecoveryLog Load (0.2ms)[0m  [1m[34mSELECT  "recovery_logs".* FROM "recovery_logs" WHERE "recovery_logs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering recovery_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mRecovery Load (0.2ms)[0m  [1m[34mSELECT  "recoveries".* FROM "recoveries" WHERE "recoveries"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered recovery_logs/show.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 80ms (Views: 76.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/workout_logs/3" for ::1 at 2020-09-30 06:18:31 -0500
+Processing by WorkoutLogsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT  "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering workout_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.1ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mWorkoutLog Load (0.1ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  Rendered workout_logs/show.html.erb within layouts/application (50.4ms)
+Completed 200 OK in 111ms (Views: 88.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/workout_logs/3" for ::1 at 2020-09-30 06:22:12 -0500
+Processing by WorkoutLogsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mWorkoutLog Load (0.1ms)[0m  [1m[34mSELECT  "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering workout_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.2ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  Rendered workout_logs/show.html.erb within layouts/application (46.0ms)
+Completed 200 OK in 95ms (Views: 78.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/workout_logs/new" for ::1 at 2020-09-30 06:23:20 -0500
+Processing by WorkoutLogsController#new as HTML
+  Rendering workout_logs/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mWorkout Load (0.5ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  Rendered workout_logs/new.html.erb within layouts/application (32.0ms)
+Completed 200 OK in 94ms (Views: 79.5ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/workout_logs" for ::1 at 2020-09-30 06:23:50 -0500
+Processing by WorkoutLogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1ePLsqFulCUvHh0euzTyRowowuU5HCZHBhJK6KH6rSdxUSWeViqL9Ly3uOC9KFhwoe7YN9Q7/Nz7PCXK8ypKFg==", "workout_log"=>{"user_id"=>"7", "workout_id"=>"19", "date"=>"2020-09-11", "duration"=>"60", "calories_burned"=>"375"}, "commit"=>"Create WorkoutLog"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "workout_logs" ("date", "duration", "calories_burned", "user_id", "workout_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2020-09-11"], ["duration", 60], ["calories_burned", 375], ["user_id", 7], ["workout_id", 19], ["created_at", "2020-09-30 11:23:50.515795"], ["updated_at", "2020-09-30 11:23:50.515795"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/workout_logs/7
+Completed 302 Found in 8ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/workout_logs/7" for ::1 at 2020-09-30 06:23:50 -0500
+Processing by WorkoutLogsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT  "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering workout_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.2ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mWorkoutLog Load (0.9ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  Rendered workout_logs/show.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 51ms (Views: 46.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/workout_logs/7" for ::1 at 2020-09-30 06:24:59 -0500
+Processing by WorkoutLogsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT  "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering workout_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.1ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mWorkoutLog Load (0.3ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  Rendered workout_logs/show.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 54ms (Views: 50.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/workout_logs/7" for ::1 at 2020-09-30 06:29:21 -0500
+Processing by WorkoutLogsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT  "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering workout_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.2ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.1ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  Rendered workout_logs/show.html.erb within layouts/application (47.9ms)
+Completed 200 OK in 96ms (Views: 69.7ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/workout_logs/7" for ::1 at 2020-09-30 06:32:07 -0500
+Processing by WorkoutLogsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT  "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering workout_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.1ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mWorkoutLog Load (0.1ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.1ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  Rendered workout_logs/show.html.erb within layouts/application (52.1ms)
+Completed 200 OK in 127ms (Views: 100.9ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/workout_logs/7" for ::1 at 2020-09-30 06:32:56 -0500
+Processing by WorkoutLogsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT  "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering workout_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.1ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mWorkoutLog Load (0.4ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.2ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendered workout_logs/show.html.erb within layouts/application (15.1ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 0, expected 1+)):
+    17: <br>
+    18: <hr>
+    19: <h4>Favorite WorkoutLog</h4>
+    20: <li>Your favorite workout to enter into a WorkoutLog is <b><%=@workout_log.user.favorite_workout%></b>, with <b><%=@workout_log.user.favorite_workout_count%></b> entries</li>
+    21: <hr>
+    22: <h4>WorkoutLog Totals</h4>
+    23: <li>Total Workout Logs: You've entered a total of <b><%=@workout_log.user.total_workout_count%></b> WorkoutLogs</li>
+  
+app/models/user.rb:67:in `count'
+app/models/user.rb:67:in `favorite_workout_count'
+app/views/workout_logs/show.html.erb:20:in `_app_views_workout_logs_show_html_erb__3024742747268875884_70115399285840'
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.3ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (43.1ms)
+Started GET "/workout_logs/7" for ::1 at 2020-09-30 06:34:51 -0500
+Processing by WorkoutLogsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT  "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering workout_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.1ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.1ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendered workout_logs/show.html.erb within layouts/application (60.1ms)
+Completed 500 Internal Server Error in 85ms (ActiveRecord: 2.8ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 0, expected 1+)):
+    17: <br>
+    18: <hr>
+    19: <h4>Favorite WorkoutLog</h4>
+    20: <li>Your favorite workout to enter into a WorkoutLog is <b><%=@workout_log.user.favorite_workout%></b>, with <b><%=@workout_log.user.favorite_workout_count%></b> entries</li>
+    21: <hr>
+    22: <h4>WorkoutLog Totals</h4>
+    23: <li>Total Workout Logs: You've entered a total of <b><%=@workout_log.user.total_workout_count%></b> WorkoutLogs</li>
+  
+app/models/user.rb:67:in `count'
+app/models/user.rb:67:in `favorite_workout_count'
+app/views/workout_logs/show.html.erb:20:in `_app_views_workout_logs_show_html_erb__3024742747268875884_70115475846460'
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.4ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.8ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (30.0ms)
+Started GET "/workout_logs/7" for ::1 at 2020-09-30 06:36:04 -0500
+Processing by WorkoutLogsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT  "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering workout_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.2ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mWorkoutLog Load (0.7ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.1ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendered workout_logs/show.html.erb within layouts/application (16.3ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 0, expected 1+)):
+    17: <br>
+    18: <hr>
+    19: <h4>Favorite WorkoutLog</h4>
+    20: <li>Your favorite workout to enter into a WorkoutLog is <b><%=@workout_log.user.favorite_workout%></b>, with <b><%=@workout_log.user.favorite_workout.count%></b> entries</li>
+    21: <hr>
+    22: <h4>WorkoutLog Totals</h4>
+    23: <li>Total Workout Logs: You've entered a total of <b><%=@workout_log.user.total_workout_count%></b> WorkoutLogs</li>
+  
+app/views/workout_logs/show.html.erb:20:in `count'
+app/views/workout_logs/show.html.erb:20:in `_app_views_workout_logs_show_html_erb__3024742747268875884_70115467998160'
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.2ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (37.4ms)
+Started GET "/workout_logs/7" for ::1 at 2020-09-30 06:36:38 -0500
+Processing by WorkoutLogsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mWorkoutLog Load (0.1ms)[0m  [1m[34mSELECT  "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering workout_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.2ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mWorkoutLog Load (0.1ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.2ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  Rendered workout_logs/show.html.erb within layouts/application (20.3ms)
+Completed 200 OK in 62ms (Views: 57.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/workout_logs/7" for ::1 at 2020-09-30 06:36:52 -0500
+Processing by WorkoutLogsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mWorkoutLog Load (0.1ms)[0m  [1m[34mSELECT  "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering workout_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.1ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mWorkoutLog Load (0.3ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.1ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  Rendered workout_logs/show.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 48ms (Views: 44.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/abbo" for ::1 at 2020-09-30 06:36:59 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/abbo"):
+  
+actionpack (5.0.7.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.7.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7.1) lib/rails/engine.rb:522:in `call'
+rack (2.0.6) lib/rack/handler/webrick.rb:86:in `service'
+/Users/admin/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/admin/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/admin/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered collection of /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [48 times] (13.0ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (50.6ms)
+Started GET "/users" for ::1 at 2020-09-30 06:37:03 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 33ms (Views: 30.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/8" for ::1 at 2020-09-30 06:37:05 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mWorkoutLog Load (0.3ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mRecoveryLog Load (0.2ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mAssessment Load (0.2ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."user_id" = ?[0m  [["user_id", 8]]
+  [1m[36mWorkoutLog Load (0.3ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."user_id" = ?[0m  [["user_id", 8]]
+  [1m[36mWorkout Load (0.1ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[36mRecoveryLog Load (0.3ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs" WHERE "recovery_logs"."user_id" = ?[0m  [["user_id", 8]]
+  [1m[36mRecovery Load (0.1ms)[0m  [1m[34mSELECT  "recoveries".* FROM "recoveries" WHERE "recoveries"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (47.0ms)
+Completed 200 OK in 73ms (Views: 65.0ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/workout_logs/4" for ::1 at 2020-09-30 06:37:10 -0500
+Processing by WorkoutLogsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mWorkoutLog Load (0.1ms)[0m  [1m[34mSELECT  "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering workout_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.3ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  Rendered workout_logs/show.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 69ms (Views: 64.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/recovery_logs/4" for ::1 at 2020-09-30 06:38:46 -0500
+Processing by RecoveryLogsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRecoveryLog Load (2.0ms)[0m  [1m[34mSELECT  "recovery_logs".* FROM "recovery_logs" WHERE "recovery_logs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering recovery_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mRecovery Load (0.4ms)[0m  [1m[34mSELECT  "recoveries".* FROM "recoveries" WHERE "recoveries"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendered recovery_logs/show.html.erb within layouts/application (10.9ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 2.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `user' for nil:NilClass
+Did you mean?  super):
+    18: <hr>
+    19: <h4>RecoveryLog Totals</h4>
+    20: 
+    21: <li>Total Recovery Logs: You've entered a total of <b><%=@workout_log.user.total_workout_count%></b> WorkoutLogs</li>
+    22: <li>Total Calories Burned: You've burned a total of <b><%=@workout_log.user.total_calories_burned%></b> calories</li>
+    23: <li>Total Duration: You've been active for a total of <b><%=@workout_log.user.total_duration%></b> minutes</li>
+    24: <br>
+  
+app/views/recovery_logs/show.html.erb:21:in `_app_views_recovery_logs_show_html_erb__2738721611552272229_70115430028640'
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.7ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (22.9ms)
+Started GET "/recovery_logs/4" for ::1 at 2020-09-30 06:38:58 -0500
+Processing by RecoveryLogsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRecoveryLog Load (0.2ms)[0m  [1m[34mSELECT  "recovery_logs".* FROM "recovery_logs" WHERE "recovery_logs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering recovery_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mRecovery Load (0.2ms)[0m  [1m[34mSELECT  "recoveries".* FROM "recoveries" WHERE "recoveries"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendered recovery_logs/show.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 52ms (Views: 49.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/recovery_logs/4" for ::1 at 2020-09-30 06:42:22 -0500
+Processing by RecoveryLogsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRecoveryLog Load (0.1ms)[0m  [1m[34mSELECT  "recovery_logs".* FROM "recovery_logs" WHERE "recovery_logs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering recovery_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mRecovery Load (0.7ms)[0m  [1m[34mSELECT  "recoveries".* FROM "recoveries" WHERE "recoveries"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mRecoveryLog Load (0.2ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "recoveries".* FROM "recoveries" WHERE "recoveries"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendered recovery_logs/show.html.erb within layouts/application (66.8ms)
+Completed 200 OK in 106ms (Views: 88.3ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/recovery_logs/4" for ::1 at 2020-09-30 06:50:40 -0500
+Processing by RecoveryLogsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRecoveryLog Load (0.2ms)[0m  [1m[34mSELECT  "recovery_logs".* FROM "recovery_logs" WHERE "recovery_logs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering recovery_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mRecovery Load (0.4ms)[0m  [1m[34mSELECT  "recoveries".* FROM "recoveries" WHERE "recoveries"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mRecoveryLog Load (0.1ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "recoveries".* FROM "recoveries" WHERE "recoveries"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  Rendered recovery_logs/show.html.erb within layouts/application (64.6ms)
+Completed 500 Internal Server Error in 100ms (ActiveRecord: 3.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `total_reovery_points' for #<User:0x00007f8a0aaf5bb8>
+Did you mean?  total_recovery_points
+               total_recovery_count):
+    25: 
+    26: 
+    27: <li>Total Recovery Logs: You've entered a total of <b><%=@recovery_log.user.total_recovery_count%></b> RecoveryLogs</li>
+    28: <li>Total Recovery Points: You've burned a total of <b><%=@recovery_log.user.total_reovery_points%></b> points</li>
+    29: <li>Total Duration: You've recovered for a total of <b><%=@recovery_log.user.total_recovery_duration%></b> minutes</li>
+    30: <br>
+    31: <hr>
+  
+app/views/recovery_logs/show.html.erb:28:in `_app_views_recovery_logs_show_html_erb__2738721611552272229_70115427464060'
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (33.2ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (58.6ms)
+Started GET "/recovery_logs/4" for ::1 at 2020-09-30 06:50:58 -0500
+Processing by RecoveryLogsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRecoveryLog Load (0.1ms)[0m  [1m[34mSELECT  "recovery_logs".* FROM "recovery_logs" WHERE "recovery_logs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering recovery_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mRecovery Load (0.1ms)[0m  [1m[34mSELECT  "recoveries".* FROM "recoveries" WHERE "recoveries"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mRecoveryLog Load (0.1ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "recoveries".* FROM "recoveries" WHERE "recoveries"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  Rendered recovery_logs/show.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 40ms (Views: 37.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/recovery_logs/4" for ::1 at 2020-09-30 06:51:17 -0500
+Processing by RecoveryLogsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRecoveryLog Load (0.2ms)[0m  [1m[34mSELECT  "recovery_logs".* FROM "recovery_logs" WHERE "recovery_logs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering recovery_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mRecovery Load (0.2ms)[0m  [1m[34mSELECT  "recoveries".* FROM "recoveries" WHERE "recoveries"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mRecoveryLog Load (0.2ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "recoveries".* FROM "recoveries" WHERE "recoveries"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  Rendered recovery_logs/show.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 60ms (Views: 57.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/recovery_logs/4" for ::1 at 2020-09-30 06:56:45 -0500
+Processing by RecoveryLogsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRecoveryLog Load (0.1ms)[0m  [1m[34mSELECT  "recovery_logs".* FROM "recovery_logs" WHERE "recovery_logs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering recovery_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mRecovery Load (0.3ms)[0m  [1m[34mSELECT  "recoveries".* FROM "recoveries" WHERE "recoveries"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mRecoveryLog Load (0.2ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "recoveries".* FROM "recoveries" WHERE "recoveries"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  Rendered recovery_logs/show.html.erb within layouts/application (49.1ms)
+Completed 200 OK in 110ms (Views: 82.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/recovery_logs/4" for ::1 at 2020-09-30 06:57:17 -0500
+Processing by RecoveryLogsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRecoveryLog Load (0.2ms)[0m  [1m[34mSELECT  "recovery_logs".* FROM "recovery_logs" WHERE "recovery_logs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering recovery_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mRecovery Load (0.1ms)[0m  [1m[34mSELECT  "recoveries".* FROM "recoveries" WHERE "recoveries"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mRecoveryLog Load (0.2ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "recoveries".* FROM "recoveries" WHERE "recoveries"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  Rendered recovery_logs/show.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 48ms (Views: 45.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/recovery_logs/4" for ::1 at 2020-09-30 06:59:26 -0500
+Processing by RecoveryLogsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRecoveryLog Load (0.3ms)[0m  [1m[34mSELECT  "recovery_logs".* FROM "recovery_logs" WHERE "recovery_logs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering recovery_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mRecovery Load (0.3ms)[0m  [1m[34mSELECT  "recoveries".* FROM "recoveries" WHERE "recoveries"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mRecoveryLog Load (0.2ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "recoveries".* FROM "recoveries" WHERE "recoveries"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  Rendered recovery_logs/show.html.erb within layouts/application (41.1ms)
+Completed 200 OK in 90ms (Views: 68.9ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/recovery_logs/4" for ::1 at 2020-09-30 07:01:05 -0500
+Processing by RecoveryLogsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRecoveryLog Load (0.2ms)[0m  [1m[34mSELECT  "recovery_logs".* FROM "recovery_logs" WHERE "recovery_logs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering recovery_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mRecovery Load (0.1ms)[0m  [1m[34mSELECT  "recoveries".* FROM "recoveries" WHERE "recoveries"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mRecoveryLog Load (0.3ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "recoveries".* FROM "recoveries" WHERE "recoveries"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  Rendered recovery_logs/show.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 45ms (Views: 41.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/4" for ::1 at 2020-09-30 07:01:07 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=4):
+  
+app/controllers/users_controller.rb:8:in `show'
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.9ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (29.5ms)
+Started GET "/recovery_logs/4" for ::1 at 2020-09-30 07:07:10 -0500
+Processing by RecoveryLogsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRecoveryLog Load (0.5ms)[0m  [1m[34mSELECT  "recovery_logs".* FROM "recovery_logs" WHERE "recovery_logs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering recovery_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mRecovery Load (0.2ms)[0m  [1m[34mSELECT  "recoveries".* FROM "recoveries" WHERE "recoveries"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mRecoveryLog Load (0.6ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "recoveries".* FROM "recoveries" WHERE "recoveries"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  Rendered recovery_logs/show.html.erb within layouts/application (30.3ms)
+Completed 200 OK in 140ms (Views: 123.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/8" for ::1 at 2020-09-30 07:07:40 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mWorkoutLog Load (0.3ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mRecoveryLog Load (1.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mAssessment Load (0.2ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."user_id" = ?[0m  [["user_id", 8]]
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."user_id" = ?[0m  [["user_id", 8]]
+  [1m[36mWorkout Load (0.2ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[36mRecoveryLog Load (0.3ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs" WHERE "recovery_logs"."user_id" = ?[0m  [["user_id", 8]]
+  [1m[36mRecovery Load (0.1ms)[0m  [1m[34mSELECT  "recoveries".* FROM "recoveries" WHERE "recoveries"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (89.5ms)
+Completed 200 OK in 134ms (Views: 127.8ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/users" for ::1 at 2020-09-30 07:07:43 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 35ms (Views: 32.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/7" for ::1 at 2020-09-30 07:07:46 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mWorkoutLog Load (0.3ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mRecoveryLog Load (0.2ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mAssessment Load (0.1ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."user_id" = ?[0m  [["user_id", 7]]
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."user_id" = ?[0m  [["user_id", 7]]
+  [1m[36mWorkout Load (0.2ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.1ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mRecoveryLog Load (1.2ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs" WHERE "recovery_logs"."user_id" = ?[0m  [["user_id", 7]]
+  [1m[36mRecovery Load (0.2ms)[0m  [1m[34mSELECT  "recoveries".* FROM "recoveries" WHERE "recoveries"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 47ms (Views: 41.8ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/workouts" for ::1 at 2020-09-30 07:07:53 -0500
+Processing by WorkoutsController#index as HTML
+  Rendering workouts/index.html.erb within layouts/application
+  [1m[36mWorkout Load (0.3ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  Rendered workouts/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 35ms (Views: 31.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recoveries" for ::1 at 2020-09-30 07:08:00 -0500
+Processing by RecoveriesController#index as HTML
+  Rendering recoveries/index.html.erb within layouts/application
+  [1m[36mRecovery Load (0.2ms)[0m  [1m[34mSELECT "recoveries".* FROM "recoveries"[0m
+  Rendered recoveries/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 34ms (Views: 30.7ms | ActiveRecord: 0.2ms)
+
+
