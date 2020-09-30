@@ -295,15 +295,11 @@ active. was inspired by its creators who believe in the importance of an agile, 
 ## TO-DO LIST:
 
 monday (planning) - DONE
-
-tuesday (functionality)
-- build models, migrations, seeds, controllers, views
-- work on model methods
-- work on controllers & show pages
-- change name of rails lab, if possible
+tuesday (functionality) - DONE
 
 wednesday (dry code & aesthetics)
-- clean up navagation
+- clean up navigation
+- change name of rails lab, if possible
 - work on simple login validation
 - DRY (partials, before_action, etc.)
 - authentificaion? cookies & sessions?
