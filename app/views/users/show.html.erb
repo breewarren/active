@@ -1,4 +1,8 @@
-<h1> active. by ambreea | abbosbek <h1>
+<h1> active. by ambreea | abbosbek </h1>
+
+<% if flash[:notice] %>
+Successful: <%= notice %>
+<%end%>
 
 <h3><%=@user.name%>'s Profile</h3>
 
@@ -8,6 +12,13 @@
 <li>Password: <%=@user.password%></li>
 
 <p><%= button_to "Edit Profile", {action: "edit"}, method: :get %></p>
+
+<br>
+<hr>
+<br>
+
+<h3>Accomplishments:</h3>
+<li><%=@user.workout_accomplishment%></li>
 
 <br>
 <hr>
@@ -29,7 +40,7 @@
 <li><%= link_to workout_log.date, workout_log%></li>
 <%end%>
 
-<p><%= button_to "New Workout Log", {action: "edit"}, method: :get %></p>
+<p><%= button_to "New Workout Log", {action: "new"}, method: :get %></p>
 
 
 <br>
@@ -40,6 +51,9 @@
 <%@user.recovery_logs.map do |recovery_log| %>
 <li><%= link_to recovery_log.date, recovery_log%></li>
 <%end%>
+
+<p><%= button_to "New Recovery Log", {action: "new"}, method: :get %></p>
+
 <br>
 <hr>
 <br>
@@ -47,7 +61,3 @@
 <p><%= button_to "Workout Index", {action: "index"}, method: :get %>
 <p><%= button_to "Recovery Index", {action: "index"}, method: :get %></p>
 <p><%= button_to "User Index", {action: "index"}, method: :get %></p>
-
-
-
-

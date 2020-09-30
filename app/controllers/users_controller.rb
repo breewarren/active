@@ -6,7 +6,6 @@ class UsersController < ApplicationController
 
     def show
         @user = User.find(params[:id])
-        # byebug
     end
 
     def new
@@ -14,19 +13,29 @@ class UsersController < ApplicationController
     end
 
     def create
-        @user = User.create(user_params)
+        @user = User.new(user_params)
         #add validations here
         @user.save
+        flash[:notice] = "User successfully created."
         redirect_to @user
     end
 
     def edit
+        @user = User.find(params[:id])
     end
 
     def update
+        @user = User.find(params[:id])
+        @user.update(user_params)
+        flash[:notice] = "User successfully updated."
+        redirect_to @user
     end
 
     def destroy
+        @user = User.find(params[:id])
+        @user.destroy
+        flash[:notice] = "User successfully deleted."
+        redirect_to users_path
     end
 
     private

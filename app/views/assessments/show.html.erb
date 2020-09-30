@@ -1,0 +1,53 @@
+<h1> active. by ambreea | abbosbek </h1>
+
+<% if flash[:notice] %>
+Successful: <%= notice %>
+<%end%>
+
+<h3><%=@user.name%>'s <%=@assessment.health_goal%> Assessment</h3>
+<hr>
+<h3> Statistics </h3>
+<hr>
+<li>Age: <%=@assessment.age%> years</li>
+<li>Sex: <%=@assessment.sex%></li>
+<li>Height: <%=@assessment.height%> inches</li>
+<li>Weight: <%=@assessment.weight%> poounds</li>
+<li>Body Fat Percentage: <%=@assessment.body_fat_percent%>%</li>
+<li>Health Goal: <%=@assessment.health_goal%></li>
+
+<p><%= button_to "New Assessment", {action: "new"}, method: :get %></p>
+
+
+<br>
+<hr>
+
+<h3>Assessment Information & Recommendations</h3>
+<hr>
+<h4>Body Mass Index </h4>
+<p>BMI Category: Your BMI category is <b><%=@assessment.bmi_category%>.</b></p>
+<i>BMI is calculated value to determine the BMI category (Underweight, Normal Weight, Overweight, or Obese), based on height and weight.</i>
+
+<p>Body Mass Index: Your BMI is <b><%=@assessment.current_bmi%></b>.</p>
+<i>The range for a healthy BMI at a normal weight is <b>18.5-24.9</b>. </i>
+<hr>
+<h4>Body Fat Percentage </h4>
+<p>Recommended: A general healthy BF%, given your sex and age, is <b><%=@assessment.recommended_bf_percent%></b>.</p>
+
+<p>BF% Category: Your BF% Category is <b><%=@assessment.bf_percent_category%>.</b></p>
+<i>BF% is the percentage of total weight that is made up of fat, which determines the category (Essential Fat, Athlete, Fitness, Acceptable, or Obese)</i>
+
+<hr>
+<h4>Heart Rate </h4>
+<p>Maximum Heart Rate: Your maximum heart rate is <b><%=@assessment.max_hr%></b> beats per minute (bpm).</p>
+<p>Target Heart Rate: Your target heart rate is <b><%=@assessment.target_hr%></b> bpm.</p>
+<i>These are values that can be useful for optimal cardiovascular endurance during activity. </i>
+
+<hr>
+<h4>Nutritional Intake </h4>
+<p>Caloric Intake: Based on your health goal, you would need to consume an estimated <b><%=@assessment.caloric_intake%> calories</b> each day.</p>
+<p>Water Intake: Based on your weight, it is recommended to consume <b><%=@assessment.water_intake%> ounces</b> of water each day.</p>
+
+   
+<br>
+<hr>
+<br>

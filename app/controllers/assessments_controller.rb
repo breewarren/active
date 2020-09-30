@@ -1,7 +1,9 @@
 class AssessmentsController < ApplicationController
-    def show 
+    
+    def show
         @assessment = Assessment.find(params[:id])
-    end 
+        @user = User.find(params[:id])
+    end
 
     def new
         @assessment = Assessment.new 
@@ -10,7 +12,7 @@ class AssessmentsController < ApplicationController
     def create 
         @assessment = Assessment.new(assessment_params)
         @assessment.save 
-        redirect_to assessment_path(@assessment)
+        redirect_to @assessment
     end
 
     def edit 
@@ -20,7 +22,7 @@ class AssessmentsController < ApplicationController
     def update 
         @assessment = Assessment.find(parmas[:id])
         @assessment.update(assessment_params)
-        redirect_to assessment_path(@assessment)
+        redirect_to @assessment
     end
 
     def destroy 

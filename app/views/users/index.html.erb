@@ -7,3 +7,7 @@
 <%end%>
 
 <p><%= button_to "Create New User", {action: "new"}, method: :get %></p>
+
+<% if flash[:notice] %>
+Successful: <%= notice %>
+<%end%>
