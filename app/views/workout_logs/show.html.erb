@@ -1,5 +1,16 @@
-<%= @workout_log.date %>
-<%= @workout_log.duration %>
-<%= @workout_log.calories_burned %>
-<%= @workout_log.user_id %>
-<%= @workout_log.workout_id %>
+<h1> active. by ambreea | abbosbek </h1>
+
+<% if flash[:notice] %>
+Successful: <%= notice %>
+<%end%>
+
+<h3><%=@workout_log.user.name%>'s WorkoutLog Details</h3>
+
+
+<li>User: <%=@workout_log.user.name%></li>
+<li>Activity: <%=@workout_log.workout.workout_type%></li>
+<li>Date: <%=@workout_log.date%></li>
+<li>Duration: <%=@workout_log.duration%> minutes</li>
+<li>Calories Burned: <%=@workout_log.calories_burned%> calories</li>
+
+<p><%= button_to "Edit WorkoutLog", {controller: "workout_logs", action: "edit"}, method: :get %></p>

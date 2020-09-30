@@ -1,0 +1,30 @@
+<h1> active. by ambreea | abbosbek </h1>
+
+<% if flash[:notice] %>
+Successful: <%= notice %>
+<%end%>
+
+<h3> Create a New Assessment: </h3>
+<%=form_for @assessment do |f|%>
+<p>Select User: <%=f.select :user_id, User.all.map {|user| [user.name, user.id]}%></p>
+<p>Age (in years): <%= f.text_field :age%></p>
+<p>Sex:
+<%= f.radio_button(:sex, "M")%>
+<%= f.label(:sex, "M") %>
+<%= f.radio_button(:sex, "F")%>
+<%= f.label(:sex, "F")%></p>
+<p>Height (in inches): <%= f.text_field :height%></p>
+<p>Weight (in pounds): <%= f.text_field :weight%></p>
+<p>Body Fat Percentage: <%= f.text_field :body_fat_percent%></p>
+<p>Health Goal (select one):
+<%= f.radio_button(:health_goal, "Fat Loss")%>
+<%= f.label(:fat_loss, "Fat Loss") %>
+<%= f.radio_button(:health_goal, "Muscle Gain")%>
+<%= f.label(:fat_loss, "Muscle Gain") %>
+<%= f.radio_button(:health_goal, "Maintenance")%>
+<%= f.label(:fat_loss, "Maintenance") %></p>
+
+<br>
+<p><%= f.submit "Create Assessment"%></p>
+<%end%>
+

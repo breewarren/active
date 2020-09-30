@@ -2,7 +2,6 @@ class AssessmentsController < ApplicationController
     
     def show
         @assessment = Assessment.find(params[:id])
-        @user = User.find(params[:id])
     end
 
     def new
@@ -12,6 +11,7 @@ class AssessmentsController < ApplicationController
     def create 
         @assessment = Assessment.new(assessment_params)
         @assessment.save 
+        flash[:notice] = "Assessment successfully created."
         redirect_to @assessment
     end
 
@@ -20,16 +20,20 @@ class AssessmentsController < ApplicationController
     end 
 
     def update 
-        @assessment = Assessment.find(parmas[:id])
+        @assessment = Assessment.find(params[:id])
         @assessment.update(assessment_params)
+        flash[:notice] = "Assessment successfully updated."
         redirect_to @assessment
     end
 
     def destroy 
         @assessment = Assessment.find(params[:id])
         @assessment.destroy 
-        redirect_to assessments_path
+        flash[:notice] = "Assessment successfully deleted."
+        redirect_to new_assessment_path
     end
+
+    private
 
     def assessment_params
         params.require(:assessment).permit(:age, :sex, :height, :weight, :body_fat_percent, :health_goal, :user_id)

@@ -1,4 +1,5 @@
 class RecoveryLogsController < ApplicationController
+   
     def show 
         @recovery_log = RecoveryLog.find(params[:id])
     end 
@@ -10,7 +11,8 @@ class RecoveryLogsController < ApplicationController
     def create 
         @recovery_log = RecoveryLog.new(recovery_log_params)
         @recovery_log.save 
-        redirect_to recovery_log_path(@recovery_log)
+        flash[:notice] = "RecoveryLog successfully created."
+        redirect_to @recovery_log
     end
 
     def edit 
@@ -18,16 +20,20 @@ class RecoveryLogsController < ApplicationController
     end 
 
     def update 
-        @recovery_log = RecoveryLog.find(parmas[:id])
+        @recovery_log = RecoveryLog.find(params[:id])
         @recovery_log.update(recovery_log_params)
-        redirect_to recovery_log_path(@recovery_log)
+        flash[:notice] = "RecoveryLog successfully updated."
+        redirect_to @recovery_log
     end
 
     def destroy 
         @recovery_log = RecoveryLog.find(params[:id])
         @recovery_log.destroy 
-        redirect_to recovery_logs_path
+        flash[:notice] = "RecoveryLog successfully deleted."
+        redirect_to new_recovery_log_path
     end
+
+    private
 
     def recovery_log_params
         params.require(:recovery_log).permit(:date, :duration, :recovery_points, :user_id, :recovery_id)

@@ -1,0 +1,27 @@
+<h1> active. by ambreea | abbosbek </h1>
+
+<% if flash[:notice] %>
+Successful: <%= notice %>
+<%end%>
+
+<h3> Create a New RecoveryLog: </h3>
+<%=form_for @recovery_log do |f|%>
+<p>Select User: <%=f.select :user_id, User.all.map {|user| [user.name, user.id]}%></p>
+<p>Select Recovery: <%=f.select :recovery_id, Recovery.all.map {|recovery| [recovery.recovery_type, recovery.id]}%></p>
+
+<p>Date: <%= f.date_field :date%></p>
+<p>Duration (in minutes): <%= f.text_field :duration%></p>
+<p>Recovery Points: <br> <i>How do you feel afterwards? Lowest 1; Highest 5</i><br>
+<%= f.radio_button(:recovery_points, 1)%>
+<%= f.label(:recovery_points, 1) %>
+<%= f.radio_button(:recovery_points, 2)%>
+<%= f.label(:recovery_points, 2) %>
+<%= f.radio_button(:recovery_points, 3)%>
+<%= f.label(:recovery_points, 3) %>
+<%= f.radio_button(:recovery_points, 4)%>
+<%= f.label(:recovery_points,4) %>
+<%= f.radio_button(:recovery_points, 5)%>
+<%= f.label(:recovery_points, 5) %></p>
+<p><%= f.submit "Create RecoveryLog"%></p>
+<%end%>
+

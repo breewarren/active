@@ -18,7 +18,8 @@ Successful: <%= notice %>
 <br>
 
 <h3>Accomplishments:</h3>
-<li><%=@user.workout_accomplishment%></li>
+<li><%=@user.workout_accomplishment%></li><br>
+<li><%=@user.recovery_accomplishment%></li>
 
 <br>
 <hr>
@@ -29,18 +30,18 @@ Successful: <%= notice %>
 <li><%= link_to assessment.health_goal, assessment%></li>
 <%end%>
 
-<p><%= button_to "New Assessment", {action: "new"}, method: :get %></p>
-
+<p><%= button_to "New Assessment", {controller: "assessments", action: "new"}, method: :get %></p>
 <br>
 <hr>
 <br>
 
+
 <h3>Workout Logs:</h3>
 <%@user.workout_logs.map do |workout_log| %>
-<li><%= link_to workout_log.date, workout_log%></li>
+<li><%=workout_log.workout.workout_type%> on <%= link_to workout_log.date, workout_log%></li>
 <%end%>
 
-<p><%= button_to "New Workout Log", {action: "new"}, method: :get %></p>
+<p><%= button_to "New Workout Log", {controller: "workout_logs", action: "new"}, method: :get %></p>
 
 
 <br>
@@ -49,15 +50,15 @@ Successful: <%= notice %>
 
 <h3>Recovery Logs:</h3>
 <%@user.recovery_logs.map do |recovery_log| %>
-<li><%= link_to recovery_log.date, recovery_log%></li>
+<li><%=recovery_log.recovery.recovery_type%> on <%= link_to recovery_log.date, recovery_log%></li>
 <%end%>
 
-<p><%= button_to "New Recovery Log", {action: "new"}, method: :get %></p>
+<p><%= button_to "New Recovery Log", {controller: "recovery_logs", action: "new"}, method: :get %></p>
 
 <br>
 <hr>
 <br>
 
-<p><%= button_to "Workout Index", {action: "index"}, method: :get %>
-<p><%= button_to "Recovery Index", {action: "index"}, method: :get %></p>
-<p><%= button_to "User Index", {action: "index"}, method: :get %></p>
+<p><%= button_to "Workout Index", {controller: "workouts", action: "index"}, method: :get %></p>
+<p><%= button_to "Recovery Index", {controller: "recoveries", action: "index"}, method: :get %></p>
+<p><%= button_to "User Index", {controller: "users", action: "index"}, method: :get %></p>

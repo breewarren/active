@@ -19,7 +19,7 @@ class UsersController < ApplicationController
         flash[:notice] = "User successfully created."
         redirect_to @user
     end
-
+     
     def edit
         @user = User.find(params[:id])
     end

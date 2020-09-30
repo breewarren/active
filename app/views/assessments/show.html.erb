@@ -4,10 +4,12 @@
 Successful: <%= notice %>
 <%end%>
 
-<h3><%=@user.name%>'s <%=@assessment.health_goal%> Assessment</h3>
+<h3> <%=@assessment.user.name%>'s </li><%=@assessment.health_goal%> Assessment</h3>
+
 <hr>
 <h3> Statistics </h3>
 <hr>
+<li>User: <%=@assessment.user.name%></li>
 <li>Age: <%=@assessment.age%> years</li>
 <li>Sex: <%=@assessment.sex%></li>
 <li>Height: <%=@assessment.height%> inches</li>
@@ -16,6 +18,7 @@ Successful: <%= notice %>
 <li>Health Goal: <%=@assessment.health_goal%></li>
 
 <p><%= button_to "New Assessment", {action: "new"}, method: :get %></p>
+<p><%= button_to "Edit Assessment", {action: "edit"}, method: :get %></p>
 
 
 <br>

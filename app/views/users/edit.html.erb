@@ -1,12 +1,12 @@
-<h1> active. by ambreea | abbosbek <h1>
+<h1> active. by ambreea | abbosbek </h1>
 
 <h3> Edit a User: </h3>
 <%=form_for @user do |f|%>
 <p>First Name: <%= f.text_field :name%></p>
 <p>Username (Email Address): <%= f.text_field :username%></p>
-<p>Password: <%= f.text_field :password%></p>
+<p>Password: <%= f.password_field :password%></p>
 <%# <p>Profile Image URL Address: <%=f.text_field :img_url%>
 <br>
-<p><%= f.submit "Update User"%></p>
+<%= f.submit "Update User"%>
 <%= button_to "Delete User", @user, method: :delete%>
 <%end%>

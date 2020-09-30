@@ -1,3 +1,10 @@
+<h1> active. by ambreea | abbosbek </h1>
+
+<h3>Workout Index</h3>
+
+
 <% @workouts.each do |w| %>
     <li><%= w.workout_type %></li>
     <% end %>
+
+<p><%= button_to "New Workout Log", {controller: "workout_logs", action: "new"}, method: :get %></p>
