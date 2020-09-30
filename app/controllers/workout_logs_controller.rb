@@ -9,9 +9,14 @@ class WorkoutLogsController < ApplicationController
 
     def create 
         @workout_log = WorkoutLog.new(workout_log_params)
-        @workout_log.save 
-        flash[:notice] = "WorkoutLog successfully created."
-        redirect_to @workout_log
+        if @workout_log.valid?
+            @workout_log.save 
+            flash[:notice] = "WorkoutLog successfully created."
+            redirect_to @workout_log
+        else
+            flash[:errors] = @workout_log.errors.full_messages
+            redirect_to new_workout_log_path
+        end
     end
 
     def edit 

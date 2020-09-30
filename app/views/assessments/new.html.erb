@@ -4,6 +4,12 @@
 Successful: <%= notice %>
 <%end%>
 
+<%if flash[:errors]%>
+<% flash[:errors].each do |error| %>
+<li style= “color:red”>Invalid: <%= error %></li>
+<%end%>
+<%end%>
+
 <h3> Create a New Assessment: </h3>
 <%=form_for @assessment do |f|%>
 <p>Select User: <%=f.select :user_id, User.all.map {|user| [user.name, user.id]}%></p>

@@ -10,9 +10,14 @@ class AssessmentsController < ApplicationController
 
     def create 
         @assessment = Assessment.new(assessment_params)
-        @assessment.save 
-        flash[:notice] = "Assessment successfully created."
-        redirect_to @assessment
+        if @assessment.valid?
+            @assessment.save 
+            flash[:notice] = "Assessment successfully created."
+            redirect_to @assessment
+        else
+            flash[:errors] = @assessment.errors.full_messages
+            redirect_to new_assessment_path
+        end
     end
 
     def edit 

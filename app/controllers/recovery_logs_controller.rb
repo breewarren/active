@@ -10,9 +10,14 @@ class RecoveryLogsController < ApplicationController
 
     def create 
         @recovery_log = RecoveryLog.new(recovery_log_params)
-        @recovery_log.save 
-        flash[:notice] = "RecoveryLog successfully created."
-        redirect_to @recovery_log
+        if @recovery_log.valid?
+            @recovery_log.save 
+            flash[:notice] = "RecoveryLog successfully created."
+            redirect_to @recovery_log
+        else
+            flash[:errors] = @recovery_log.errors.full_messages
+            redirect_to new_recovery_log_path
+        end
     end
 
     def edit 

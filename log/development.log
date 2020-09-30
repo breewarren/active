@@ -10609,3 +10609,337 @@ Processing by AssessmentsController#new as HTML
 Completed 200 OK in 689ms (Views: 676.7ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/users" for ::1 at 2020-09-30 09:35:25 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (108.2ms)
+Completed 200 OK in 1046ms (Views: 957.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/users/7" for ::1 at 2020-09-30 09:36:47 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mWorkoutLog Load (0.6ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mRecoveryLog Load (0.6ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mAssessment Load (1.0ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."user_id" = ?[0m  [["user_id", 7]]
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."user_id" = ?[0m  [["user_id", 7]]
+  [1m[36mWorkout Load (0.7ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.1ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mRecoveryLog Load (0.4ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs" WHERE "recovery_logs"."user_id" = ?[0m  [["user_id", 7]]
+  [1m[36mRecovery Load (0.2ms)[0m  [1m[34mSELECT  "recoveries".* FROM "recoveries" WHERE "recoveries"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (368.1ms)
+Completed 200 OK in 438ms (Views: 402.3ms | ActiveRecord: 15.9ms)
+
+
+Started GET "/users/8" for ::1 at 2020-09-30 09:36:50 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mWorkoutLog Load (0.4ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mRecoveryLog Load (1.1ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mAssessment Load (0.2ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."user_id" = ?[0m  [["user_id", 8]]
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."user_id" = ?[0m  [["user_id", 8]]
+  [1m[36mWorkout Load (0.2ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[36mRecoveryLog Load (0.2ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs" WHERE "recovery_logs"."user_id" = ?[0m  [["user_id", 8]]
+  [1m[36mRecovery Load (0.1ms)[0m  [1m[34mSELECT  "recoveries".* FROM "recoveries" WHERE "recoveries"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 124ms (Views: 112.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assessments/13" for ::1 at 2020-09-30 09:38:13 -0500
+Processing by AssessmentsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mAssessment Load (0.2ms)[0m  [1m[34mSELECT  "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering assessments/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered assessments/show.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 124ms (Views: 109.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assessments/13/edit" for ::1 at 2020-09-30 09:40:46 -0500
+Processing by AssessmentsController#edit as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mAssessment Load (1.2ms)[0m  [1m[34mSELECT  "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering assessments/edit.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered assessments/edit.html.erb within layouts/application (303.9ms)
+Completed 200 OK in 391ms (Views: 384.9ms | ActiveRecord: 1.5ms)
+
+
+Started PATCH "/assessments/13" for ::1 at 2020-09-30 09:41:00 -0500
+Processing by AssessmentsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y13+7f6A/b4h9XCgd+ZHkzGHW6ykkazaRDfzCGDApYpv7xDBCcTib7Jc1V5x+u2lHEFBfkm2dkG5GZwqMhBCuw==", "assessment"=>{"user_id"=>"8", "age"=>"23", "sex"=>"M", "height"=>"71", "weight"=>"165", "body_fat_percent"=>"17", "health_goal"=>"Maintenance"}, "commit"=>"Update Assessment", "id"=>"13"}
+  [1m[36mAssessment Load (0.2ms)[0m  [1m[34mSELECT  "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.1ms)[0m  [1m[33mUPDATE "assessments" SET "health_goal" = ?, "updated_at" = ? WHERE "assessments"."id" = ?[0m  [["health_goal", "Maintenance"], ["updated_at", "2020-09-30 14:41:00.764793"], ["id", 13]]
+  [1m[35m (15.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/assessments/13
+Completed 302 Found in 48ms (ActiveRecord: 19.1ms)
+
+
+Started GET "/assessments/13" for ::1 at 2020-09-30 09:41:00 -0500
+Processing by AssessmentsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mAssessment Load (0.2ms)[0m  [1m[34mSELECT  "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering assessments/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered assessments/show.html.erb within layouts/application (22.2ms)
+Completed 200 OK in 373ms (Views: 309.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assessments/13/edit" for ::1 at 2020-09-30 09:41:11 -0500
+Processing by AssessmentsController#edit as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mAssessment Load (0.2ms)[0m  [1m[34mSELECT  "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering assessments/edit.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered assessments/edit.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 122ms (Views: 118.0ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/assessments/13" for ::1 at 2020-09-30 09:41:16 -0500
+Processing by AssessmentsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jrJ5vaFPhkZCnNDtWYaOhikefnjaxb/d3t9ivGYcVEIqAJeRVguZl9E1dRNfmiSwBNhkqjfiZUYj8Q2eNMyzcw==", "assessment"=>{"user_id"=>"8", "age"=>"23", "sex"=>"M", "height"=>"71", "weight"=>"167", "body_fat_percent"=>"17", "health_goal"=>"Maintenance"}, "commit"=>"Update Assessment", "id"=>"13"}
+  [1m[36mAssessment Load (0.3ms)[0m  [1m[34mSELECT  "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35m (32.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "assessments" SET "weight" = ?, "updated_at" = ? WHERE "assessments"."id" = ?[0m  [["weight", 167], ["updated_at", "2020-09-30 14:41:17.046522"], ["id", 13]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/assessments/13
+Completed 302 Found in 81ms (ActiveRecord: 34.7ms)
+
+
+Started GET "/assessments/13" for ::1 at 2020-09-30 09:41:17 -0500
+Processing by AssessmentsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mAssessment Load (0.2ms)[0m  [1m[34mSELECT  "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering assessments/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered assessments/show.html.erb within layouts/application (39.8ms)
+Completed 200 OK in 216ms (Views: 212.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/8" for ::1 at 2020-09-30 09:41:30 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mWorkoutLog Load (0.4ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mRecoveryLog Load (0.3ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mAssessment Load (0.2ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."user_id" = ?[0m  [["user_id", 8]]
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."user_id" = ?[0m  [["user_id", 8]]
+  [1m[36mWorkout Load (0.2ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[36mRecoveryLog Load (0.2ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs" WHERE "recovery_logs"."user_id" = ?[0m  [["user_id", 8]]
+  [1m[36mRecovery Load (0.1ms)[0m  [1m[34mSELECT  "recoveries".* FROM "recoveries" WHERE "recoveries"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (112.6ms)
+Completed 200 OK in 275ms (Views: 251.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/workout_logs/new" for ::1 at 2020-09-30 09:43:33 -0500
+Processing by WorkoutLogsController#new as HTML
+  Rendering workout_logs/new.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mWorkout Load (0.4ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  Rendered workout_logs/new.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 151ms (Views: 141.6ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/workout_logs" for ::1 at 2020-09-30 09:44:09 -0500
+Processing by WorkoutLogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RtJ8oJj8WX4UF7ugUaW6OA/cWJLRSd1enGHz1J9qUJfiYJKMb7hGr4e+Hl5XuRAOIhpCQDxuB8VhT5z2zbq3pg==", "workout_log"=>{"user_id"=>"8", "workout_id"=>"20", "date"=>"2020-09-30", "duration"=>"45", "calories_burned"=>"200"}, "commit"=>"Create WorkoutLog"}
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "workout_logs" ("date", "duration", "calories_burned", "user_id", "workout_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2020-09-30"], ["duration", 45], ["calories_burned", 200], ["user_id", 8], ["workout_id", 20], ["created_at", "2020-09-30 14:44:09.636794"], ["updated_at", "2020-09-30 14:44:09.636794"]]
+  [1m[35m (7.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/workout_logs/8
+Completed 302 Found in 230ms (ActiveRecord: 10.5ms)
+
+
+Started GET "/workout_logs/8" for ::1 at 2020-09-30 09:44:09 -0500
+Processing by WorkoutLogsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mWorkoutLog Load (4.0ms)[0m  [1m[34mSELECT  "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering workout_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.2ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mWorkoutLog Load (2.8ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mWorkout Load (0.5ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  Rendered workout_logs/show.html.erb within layouts/application (80.5ms)
+Completed 200 OK in 370ms (Views: 217.3ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/users/8" for ::1 at 2020-09-30 09:46:35 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mWorkoutLog Load (0.3ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mRecoveryLog Load (1.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mAssessment Load (0.2ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."user_id" = ?[0m  [["user_id", 8]]
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."user_id" = ?[0m  [["user_id", 8]]
+  [1m[36mWorkout Load (0.2ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.3ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mRecoveryLog Load (0.2ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs" WHERE "recovery_logs"."user_id" = ?[0m  [["user_id", 8]]
+  [1m[36mRecovery Load (0.2ms)[0m  [1m[34mSELECT  "recoveries".* FROM "recoveries" WHERE "recoveries"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (31.9ms)
+Completed 200 OK in 166ms (Views: 157.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/recovery_logs/4" for ::1 at 2020-09-30 09:46:53 -0500
+Processing by RecoveryLogsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRecoveryLog Load (0.7ms)[0m  [1m[34mSELECT  "recovery_logs".* FROM "recovery_logs" WHERE "recovery_logs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering recovery_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mRecovery Load (0.2ms)[0m  [1m[34mSELECT  "recoveries".* FROM "recoveries" WHERE "recoveries"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mRecoveryLog Load (0.4ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "recoveries".* FROM "recoveries" WHERE "recoveries"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  Rendered recovery_logs/show.html.erb within layouts/application (46.8ms)
+Completed 200 OK in 124ms (Views: 109.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/recovery_logs/new" for ::1 at 2020-09-30 09:47:11 -0500
+Processing by RecoveryLogsController#new as HTML
+  Rendering recovery_logs/new.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mRecovery Load (0.8ms)[0m  [1m[34mSELECT "recoveries".* FROM "recoveries"[0m
+  Rendered recovery_logs/new.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 132ms (Views: 116.8ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/recovery_logs" for ::1 at 2020-09-30 09:47:49 -0500
+Processing by RecoveryLogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4oRYOae9TEN1LsZHQ6j1Q5BCcvND5Aa8s4iH+VTWzXxGNrYVUPlTkuaHY7lFtF91vYRoIa7D3CdOpujbBgYqTQ==", "recovery_log"=>{"user_id"=>"7", "recovery_id"=>"10", "date"=>"2020-09-30", "duration"=>"15", "recovery_points"=>"2"}, "commit"=>"Create RecoveryLog"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.1ms)[0m  [1m[32mINSERT INTO "recovery_logs" ("date", "duration", "recovery_points", "user_id", "recovery_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2020-09-30"], ["duration", 15], ["recovery_points", 2], ["user_id", 7], ["recovery_id", 10], ["created_at", "2020-09-30 14:47:49.432801"], ["updated_at", "2020-09-30 14:47:49.432801"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/recovery_logs/6
+Completed 302 Found in 9ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/recovery_logs/6" for ::1 at 2020-09-30 09:47:49 -0500
+Processing by RecoveryLogsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mRecoveryLog Load (0.1ms)[0m  [1m[34mSELECT  "recovery_logs".* FROM "recovery_logs" WHERE "recovery_logs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering recovery_logs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mRecovery Load (0.3ms)[0m  [1m[34mSELECT  "recoveries".* FROM "recoveries" WHERE "recoveries"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mRecoveryLog Load (0.5ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mRecovery Load (0.2ms)[0m  [1m[34mSELECT  "recoveries".* FROM "recoveries" WHERE "recoveries"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "recoveries".* FROM "recoveries" WHERE "recoveries"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  Rendered recovery_logs/show.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 187ms (Views: 178.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users" for ::1 at 2020-09-30 09:48:01 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 79ms (Views: 74.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/7" for ::1 at 2020-09-30 09:48:02 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mWorkoutLog Load (0.4ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs"[0m
+  [1m[36mRecoveryLog Load (0.2ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs"[0m
+  [1m[36mAssessment Load (0.3ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."user_id" = ?[0m  [["user_id", 7]]
+  [1m[36mWorkoutLog Load (0.2ms)[0m  [1m[34mSELECT "workout_logs".* FROM "workout_logs" WHERE "workout_logs"."user_id" = ?[0m  [["user_id", 7]]
+  [1m[36mWorkout Load (0.2ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mWorkout Load (0.2ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mRecoveryLog Load (0.2ms)[0m  [1m[34mSELECT "recovery_logs".* FROM "recovery_logs" WHERE "recovery_logs"."user_id" = ?[0m  [["user_id", 7]]
+  [1m[36mRecovery Load (1.6ms)[0m  [1m[34mSELECT  "recoveries".* FROM "recoveries" WHERE "recoveries"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mRecovery Load (0.9ms)[0m  [1m[34mSELECT  "recoveries".* FROM "recoveries" WHERE "recoveries"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (32.2ms)
+Completed 200 OK in 104ms (Views: 92.3ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/assessments/12" for ::1 at 2020-09-30 09:48:22 -0500
+Processing by AssessmentsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mAssessment Load (2.0ms)[0m  [1m[34mSELECT  "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering assessments/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered assessments/show.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 112ms (Views: 106.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assessments/new" for ::1 at 2020-09-30 09:48:27 -0500
+Processing by AssessmentsController#new as HTML
+  Rendering assessments/new.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered assessments/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 74ms (Views: 65.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assessments/12" for ::1 at 2020-09-30 10:08:13 -0500
+Processing by AssessmentsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mAssessment Load (1.3ms)[0m  [1m[34mSELECT  "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering assessments/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered assessments/show.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 108ms (Views: 89.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assessments/12/edit" for ::1 at 2020-09-30 10:08:20 -0500
+Processing by AssessmentsController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mAssessment Load (0.3ms)[0m  [1m[34mSELECT  "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering assessments/edit.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered assessments/edit.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 52ms (Views: 49.3ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/assessments/12" for ::1 at 2020-09-30 10:08:22 -0500
+Processing by AssessmentsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Z7JwOR6SKytUanl1U3vQha+lr9NyMzjP/C5OAJmj2vnDAJ4V6dY0+sfD3ItVZ3qzgmO1AZ8U4lQBACEiy3M9yA==", "assessment"=>{"user_id"=>"7", "age"=>"27", "sex"=>"F", "height"=>"66", "weight"=>"145", "body_fat_percent"=>"23", "health_goal"=>"Muscle Gain"}, "commit"=>"Update Assessment", "id"=>"12"}
+  [1m[36mAssessment Load (0.2ms)[0m  [1m[34mSELECT  "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.7ms)[0m  [1m[33mUPDATE "assessments" SET "health_goal" = ?, "updated_at" = ? WHERE "assessments"."id" = ?[0m  [["health_goal", "Muscle Gain"], ["updated_at", "2020-09-30 15:08:22.996329"], ["id", 12]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/assessments/12
+Completed 302 Found in 42ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/assessments/12" for ::1 at 2020-09-30 10:08:23 -0500
+Processing by AssessmentsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mAssessment Load (0.1ms)[0m  [1m[34mSELECT  "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering assessments/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered assessments/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 40ms (Views: 36.8ms | ActiveRecord: 0.2ms)
+
+

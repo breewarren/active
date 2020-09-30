@@ -309,6 +309,7 @@ thursday (finishing up)
 - specify route resources
 - finish any back-or front end
 - finish things learned/highlights/difficulties, etc
+- add more seeds for walkthrough, if needed
 - create walkthrough to record
 
 friday (presenting)

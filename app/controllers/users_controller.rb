@@ -14,10 +14,14 @@ class UsersController < ApplicationController
 
     def create
         @user = User.new(user_params)
-        #add validations here
-        @user.save
-        flash[:notice] = "User successfully created."
-        redirect_to @user
+        if @user.valid?
+            @user.save
+            flash[:notice] = "User successfully created."
+            redirect_to @user
+        else
+            flash[:errors] = @user.errors.full_messages
+            redirect_to new_user_path
+        end
     end
      
     def edit

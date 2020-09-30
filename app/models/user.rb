@@ -5,7 +5,11 @@ class User < ApplicationRecord
     has_many :workouts, through: :workout_logs
     has_many :recovery_logs
     has_many :recoveries, through: :recovery_logs
-   
+
+    validates :name, :username, :password, presence: true
+    validates :username, uniqueness: true
+    validates :password, length: {minimum: 4}
+
     #accomplishments
     def workout_accomplishment
         user_workout_logs = WorkoutLog.all.select {|workout| workout.user_id == self.id}.count

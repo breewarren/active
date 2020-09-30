@@ -1,5 +1,15 @@
 <h1> active. by ambreea | abbosbek </h1>
 
+<% if flash[:notice] %>
+Successful: <%= notice %>
+<%end%>
+
+<%if flash[:errors]%>
+<% flash[:errors].each do |error| %>
+<li style= “color:red”>Invalid: <%= error %></li>
+<%end%>
+<%end%>
+
 <h3> Create a New User: </h3>
 <%=form_for @user do |f|%>
 <p>First Name: <%= f.text_field :name%></p>
