@@ -86,16 +86,17 @@ class User < ApplicationRecord
         self.user_recovery_logs.map {|recovery| recovery.recovery_points}.sum
     end
 
-    def total_recovery_duration
-        self.user_recovery_logs.map {|recovery| recovery.duration}.sum
-    end
+    # def total_recovery_duration
+    #     byebug
+    #     self.user_recovery_logs.map {|recovery| recovery.duration}.sum
+    # end
 
-    def average_recovery_duration
-        self.total_recovery_duration / self.total_recovery_count
-    end
+    # def average_recovery_duration
+    #     self.total_recovery_duration / self.total_recovery_count
+    # end
 
-    def longest_recovery_duration
-        self.user_recovery_logs.map {|recovery| recovery.duration}.max
-    end
+    # def longest_recovery_duration
+    #     self.user_recovery_logs.map {|recovery| recovery.duration}.max
+    # end
 
 end

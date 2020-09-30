@@ -1,4 +1,6 @@
 class AssessmentsController < ApplicationController
+
+    # before_action :current_assessment, only [:show, :edit, :update, :destroy]
     
     def show
         @assessment = Assessment.find(params[:id])
@@ -33,9 +35,10 @@ class AssessmentsController < ApplicationController
 
     def destroy 
         @assessment = Assessment.find(params[:id])
+        @user = @assessment.user
         @assessment.destroy 
         flash[:notice] = "Assessment successfully deleted."
-        redirect_to new_assessment_path
+        redirect_to user_path(@user)
     end
 
     private
@@ -43,5 +46,10 @@ class AssessmentsController < ApplicationController
     def assessment_params
         params.require(:assessment).permit(:age, :sex, :height, :weight, :body_fat_percent, :health_goal, :user_id)
     end
+
+
+    # def current_assessment
+    #     @assessment = Assessment.find(params[:id])
+    # end
     
 end

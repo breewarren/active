@@ -4,14 +4,20 @@
 Successful: <%= notice %>
 <%end%>
 
-<h3><%=@user.name%>'s Profile</h3>
+<h2>Hi, <%=@user.name%>. View Your Profile:</h2>
+<%if @user.img_url%>
+<img src="<%=@user.img_url%>" alt="Profile Image" width="300" height="300">
+<%end%>
 
-<p>Account Details:</p>
+<h3>Account Details:</h3>
 <li>Name: <%=@user.name%></li>
 <li>Username: <%=@user.username%></li>
 <li>Password: <%=@user.password%></li>
 
 <p><%= button_to "Edit Profile", {action: "edit"}, method: :get %></p>
+<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+  <input type=submit value='Logout'>
+<% end %>
 
 <br>
 <hr>
@@ -58,7 +64,6 @@ Successful: <%= notice %>
 <br>
 <hr>
 <br>
-
+<h3>Other Options:</h3>
 <p><%= button_to "Workout Index", {controller: "workouts", action: "index"}, method: :get %></p>
 <p><%= button_to "Recovery Index", {controller: "recoveries", action: "index"}, method: :get %></p>
-<p><%= button_to "User Index", {controller: "users", action: "index"}, method: :get %></p>

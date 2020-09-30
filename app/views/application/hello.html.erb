@@ -1,0 +1,14 @@
+<h1> active.</h1>
+<h2>by ambreea | abbosbek </h1>
+
+<%# (add image or logo here) %>
+
+<% if flash[:notice] %>
+Successful: <%= notice %>
+<%end%>
+
+<p>Existing User: <%= button_to "Sign In", {controller: "sessions", action: "new"}, method: :get%></p>
+<p>New User: <%= button_to "Sign Up", {controller: "users", action: "new"}, method: :get %></p> 
+
+
+

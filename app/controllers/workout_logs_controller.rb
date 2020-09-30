@@ -1,4 +1,7 @@
 class WorkoutLogsController < ApplicationController
+
+    # before_action :current_workout_log, only [:show, :edit, :update, :destroy]
+
     def show 
         @workout_log = WorkoutLog.find(params[:id])
     end 
@@ -31,16 +34,23 @@ class WorkoutLogsController < ApplicationController
     end
 
     def destroy 
+        # byebug
         @workout_log = WorkoutLog.find(params[:id])
+        @user = @workout_log.user
+        # byebug
         @workout_log.destroy 
         flash[:notice] = "WorkoutLog successfully deleted."
-        redirect_to new_workout_log_path
+        redirect_to user_path(@user)
     end
 
     private
 
     def workout_log_params
         params.require(:workout_log).permit(:date, :duration, :calories_burned, :user_id, :workout_id)
+    end
+
+    def current_workout_log
+        @workout_log = WorkoutLog.find(params[:id])
     end
     
 end

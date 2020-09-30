@@ -19,9 +19,8 @@ Successful: <%= notice %>
 
 <p><%= button_to "New Assessment", {action: "new"}, method: :get %></p>
 <p><%= button_to "Edit Assessment", {action: "edit"}, method: :get %></p>
+<p><%@user = @assessment.user%><%= button_to "User Profile", @user, method: :get %></p>
 
-
-<br>
 <hr>
 
 <h3>Assessment Information & Recommendations</h3>

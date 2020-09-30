@@ -3,8 +3,9 @@
 <h3>Workout Index</h3>
 
 
-<% @workouts.each do |w| %>
+<%@workouts.each do |w| %>
     <li><%= w.workout_type %></li>
     <% end %>
-
+    
 <p><%= button_to "New Workout Log", {controller: "workout_logs", action: "new"}, method: :get %></p>
+<p><%@user = @workout_log.user%><%= button_to "User Profile", @user, method: :get %></p>

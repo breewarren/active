@@ -1,4 +1,6 @@
 class RecoveryLogsController < ApplicationController
+    
+    # before_action :current_recovery_log, only [:show, :edit, :update, :destroy]
    
     def show 
         @recovery_log = RecoveryLog.find(params[:id])
@@ -33,9 +35,10 @@ class RecoveryLogsController < ApplicationController
 
     def destroy 
         @recovery_log = RecoveryLog.find(params[:id])
+        @user = @recovery_log.user
         @recovery_log.destroy 
         flash[:notice] = "RecoveryLog successfully deleted."
-        redirect_to new_recovery_log_path
+        redirect_to user_path(@user)
     end
 
     private
@@ -43,5 +46,9 @@ class RecoveryLogsController < ApplicationController
     def recovery_log_params
         params.require(:recovery_log).permit(:date, :duration, :recovery_points, :user_id, :recovery_id)
     end
+
+    # def current_recovery_log
+    #     @recovery_log = RecoveryLog.find(params[:id])
+    # end
     
 end

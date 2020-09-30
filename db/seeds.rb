@@ -14,8 +14,8 @@ WorkoutLog.destroy_all
 RecoveryLog.destroy_all
 
 #User
-bree = User.create(name: "Bree", username: "ambreea.warren@gmail.com", password: "3693")
-abbo = User.create(name: "Abbo", username: "muydinboevabbosbek@gmail.com", password: "1234")
+bree = User.create(name: "Bree", username: "ambreea.warren@gmail.com", password: "3693", img_url: "https://ca.slack-edge.com/T02MD9XTF-U014PHQJDB6-b1c7816d3d41-512")
+abbo = User.create(name: "Abbo", username: "muydinboevabbosbek@gmail.com", password: "1234", img_url: "https://ca.slack-edge.com/T02MD9XTF-U016PSCMV6H-3537ef7ab0cf-512")
 
 #Workout
 jogging = Workout.create(workout_type: "Jogging")
@@ -47,11 +47,11 @@ bree_assess = Assessment.create(age: 27, sex: "F", height: 66, weight: 145, body
 abbo_assess = Assessment.create(age: 23, sex: "M", height: 71, weight: 165, body_fat_percent: 17, health_goal: "Muscle Gain", user_id: abbo.id)
 
 #WorkoutLog
-bree_workout_log_20200929 = WorkoutLog.create(date: "09.29.2020", duration: 45, calories_burned: 250, user_id: bree.id, workout_id: yoga.id)
-abbo_workout_log_20200929 = WorkoutLog.create(date: "09.29.2020", duration: 60, calories_burned: 500, user_id: abbo.id, workout_id: martial_arts.id)
+bree_workout_log_20200929 = WorkoutLog.create(date: "2020-09-28", duration: 45, calories_burned: 250, user_id: bree.id, workout_id: yoga.id)
+abbo_workout_log_20200929 = WorkoutLog.create(date: "2020-09-29", duration: 60, calories_burned: 500, user_id: abbo.id, workout_id: martial_arts.id)
 
 #RecoveryLog
-bree_recovery_log_20200929 = RecoveryLog.create(date: "09.29.2020", duration: 30, recovery_points: 3, user_id: bree.id, recovery_id: massage.id)
-abbo_recovery_log_20200929 = RecoveryLog.create(date: "09.29.2020", duration: 480, recovery_points: 5, user_id: abbo.id, recovery_id: sleeping.id)
+bree_recovery_log_20200929 = RecoveryLog.create(date: "2020-09-20", duration: 30, recovery_points: 3, user_id: bree.id, recovery_id: massage.id)
+abbo_recovery_log_20200929 = RecoveryLog.create(date: "2020-09-29", duration: 480, recovery_points: 5, user_id: abbo.id, recovery_id: sleeping.id)
 
 puts "Good to go!"

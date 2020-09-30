@@ -1,8 +1,10 @@
 class UsersController < ApplicationController
 
-    def index
-        @users = User.all
-    end
+    # before_action :current_user, only [:show, :edit, :update, :destroy]
+
+    # def index
+    #     @users = User.all
+    # end
 
     def show
         @user = User.find(params[:id])
@@ -39,14 +41,18 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
         @user.destroy
         flash[:notice] = "User successfully deleted."
-        redirect_to users_path
+        redirect_to '/'
     end
 
     private
 
     def user_params
-        params.require(:user).permit(:name, :username, :password)
+        params.require(:user).permit(:name, :username, :password, :img_url)
     end
+
+    # def current_user
+    #     @user = User.find(params[:id])
+    # end
 
 
 end
