@@ -49,10 +49,11 @@ Successful: <%= notice %>
 <%end%>
 <%end%>
 
-<%=form_for @user do |f|%>
+<%=form_for @user, url: '/users' do |f|%>
 <p>First Name: <%= f.text_field :name%></p>
 <p>Email Address: <%= f.text_field :username%></p>
 <p>Password: <%= f.password_field :password%></p>
+<p>Password Confirmation: <%= f.password_field :password_confirmation%></p>
 <p>Profile Image URL: <%=f.text_field :img_url%>
 <br>
 <p><%= f.submit "Create User"%></p>

@@ -39,8 +39,8 @@ p {line-height: 1}
 <%# start code%>
 <h1> <b>active.</b></h1>
 <br>
-<% if flash[:notice] %>
-Error: <%= notice %>
+<% if flash[:error] %>
+Error: <%= error %>
 <%end%>
 
 <%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>

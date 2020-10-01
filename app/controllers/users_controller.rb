@@ -1,13 +1,10 @@
 class UsersController < ApplicationController
 
-    # before_action :current_user, only [:show, :edit, :update, :destroy]
-
-    # def index
-    #     @users = User.all
-    # end
+    before_action :authenticated?, only: :show
 
     def show
         @user = User.find(params[:id])
+        # byebug
     end
 
     def new
@@ -47,12 +44,15 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:name, :username, :password, :img_url)
+        params.require(:user).permit(:name, :username, :password, :password_confirmation, :img_url)
     end
 
-    # def current_user
-    #     @user = User.find(params[:id])
-    # end
+    def authenticated?
+        # byebug
+        if session[:user_id].to_s != params[:id]
+            redirect_to '/login'
+        end
+    end
 
 
 end
