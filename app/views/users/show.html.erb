@@ -18,7 +18,12 @@ p {line-height: 2}
   background-position: left;
   background-size: cover;
 }
-.bgimg {background-image: url("https://i.paste.pics/A9SPO.png")}
+
+/* body {background-color: #fefefa;} */
+body {background-color: #1b1b1b;}
+/* body {background-color: #141414;} */
+/* body {background-color: #1b1e23;} */
+
 
 img {
   border-radius: 50%;
@@ -29,7 +34,7 @@ img {
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-
+<%#end head%>
 
 <%#start body%>
 <body>
@@ -38,27 +43,31 @@ img {
   <br>
   <br>
   <br>
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-card">
+    <a href="http://localhost:3000" class="w3-bar-item w3-button"><b>ACTIVE. </b>by ambreea | abbosbek</a>
+    <!-- Float links to the right. Hide them on small screens --> 
+  </div>
+</div>
+
 <%= yield %>
 
 <%# start code%>
+<div class="w2-display-left w3-wide w3-text-white w3-center">
 <% if flash[:notice] %>
 Successful: <%= notice %>
 <%end%>
-<h1><center>active.</center></h1>
+<%# <h1><center>active.</center></h1> %>
 
-
-
-<div class="w2-display-left w3-text-black w3-center">
-<center><h2>Welcome, <%=@user.name%>. View your Profile:<h2></center>
+<h2>Welcome, <%=@user.name%>.<h2>
 <%if @user.img_url%>
 <img src="<%=@user.img_url%>" alt="Profile Image" width="300" height="300">
 <%end%>
 
-<h2>Account Details: </h2>
-
+<h2>Account Details</h2>
 Name: <%=@user.name%><br>
 Username: <%=@user.username%><br>
-Password: <%=@user.password%>
+Password: <%=@user.password%></p>
 
 <p><%= button_to "Edit Profile", {action: "edit"}, method: :get %></p>
 <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
@@ -66,43 +75,36 @@ Password: <%=@user.password%>
 <% end %>
 
 <br>
-<b><hr></b>
+<br>
+<br>
+<br>
 <br>
 
-
-<h2>Accomplishments:</h2>
-<li><%=@user.workout_accomplishment%></li><br>
-<li><%=@user.recovery_accomplishment%></li>
+<h2>Accomplishments</h2>
+<%=@user.workout_accomplishment%><br>
+<br>
+<%=@user.recovery_accomplishment%>
 
 <br>
-<hr>
 <br>
-
-<h2>Assessments:</h2>
+<h2>Assessments</h2>
 <%@user.assessments.map do |assessment| %>
 <li><%= link_to assessment.health_goal, assessment%></li>
 <%end%>
 
 <p><%= button_to "New Assessment", {controller: "assessments", action: "new"}, method: :get %></p>
 <br>
-<hr>
-<br>
 
 
-
-<h2>Workout Logs:</h2>
+<h2>WorkoutLogs</h2>
 <%@user.workout_logs.map do |workout_log| %>
 <li><%=workout_log.workout.workout_type%> on <%= link_to workout_log.date, workout_log%></li>
 <%end%>
 
 <p><%= button_to "New Workout Log", {controller: "workout_logs", action: "new"}, method: :get %></p>
-
-
-<br>
-<hr>
 <br>
 
-<h2>Recovery Logs:</h2>
+<h2>RecoveryLogs</h2>
 <%@user.recovery_logs.map do |recovery_log| %>
 <li><%=recovery_log.recovery.recovery_type%> on <%= link_to recovery_log.date, recovery_log%></li>
 <%end%>
@@ -110,7 +112,8 @@ Password: <%=@user.password%>
 <p><%= button_to "New Recovery Log", {controller: "recovery_logs", action: "new"}, method: :get %></p>
 
 <br>
-<hr>
+<br>
+<br>
 <br>
 
 <%# <h2>Other Options:</h2>
@@ -121,7 +124,7 @@ Password: <%=@user.password%>
 
 <%#navagation bar%>
 <div class="w3-bottom w3-hide-small">
-  <div class="w3-bar w3-gray w3-center w3-padding w3-opacity-min w3-hover-opacity-off">
+  <div class="w3-bar w3-wide w3-gray w3-center w3-padding w3-opacity-min w3-hover-opacity-off">
     <a href="/assessments/new" style="width:20%" class="w3-bar-item w3-button">New Assessment</a>
     <a href="/workout_logs/new" style="width:20%" class="w3-bar-item w3-button">New WorkoutLog</a>
     <a href="/recovery_logs/new" style="width:20%" class="w3-bar-item w3-button">New RecoveryLog</a>
