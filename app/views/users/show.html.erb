@@ -1,18 +1,64 @@
-<h1> active. by ambreea | abbosbek </h1>
+<!DOCTYPE html>
+<html>
 
+<%#start head%>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+<style>
+body,h1,h2{font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+p {line-height: 2}
+.bgimg, .bgimg2 {
+  min-height: 100%;
+  background-position: left;
+  background-size: cover;
+}
+.bgimg {background-image: url("https://i.paste.pics/A9SPO.png")}
+
+img {
+  border-radius: 50%;
+}
+</style>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+
+<%#start body%>
+<body>
+<%# <header class="w3-display-container w3-wide bgimg w3-grayscale-min" id="home"> %>
+  <%# <div class="w3-display-middle w3-text-black w3-center"> %>
+  <br>
+  <br>
+  <br>
+<%= yield %>
+
+<%# start code%>
 <% if flash[:notice] %>
 Successful: <%= notice %>
 <%end%>
+<h1><center>active.</center></h1>
 
-<h2>Hi, <%=@user.name%>. View Your Profile:</h2>
+
+
+<div class="w2-display-left w3-text-black w3-center">
+<center><h2>Welcome, <%=@user.name%>. View your Profile:<h2></center>
 <%if @user.img_url%>
 <img src="<%=@user.img_url%>" alt="Profile Image" width="300" height="300">
 <%end%>
 
-<h3>Account Details:</h3>
-<li>Name: <%=@user.name%></li>
-<li>Username: <%=@user.username%></li>
-<li>Password: <%=@user.password%></li>
+<h2>Account Details: </h2>
+
+Name: <%=@user.name%><br>
+Username: <%=@user.username%><br>
+Password: <%=@user.password%>
 
 <p><%= button_to "Edit Profile", {action: "edit"}, method: :get %></p>
 <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
@@ -20,10 +66,11 @@ Successful: <%= notice %>
 <% end %>
 
 <br>
-<hr>
+<b><hr></b>
 <br>
 
-<h3>Accomplishments:</h3>
+
+<h2>Accomplishments:</h2>
 <li><%=@user.workout_accomplishment%></li><br>
 <li><%=@user.recovery_accomplishment%></li>
 
@@ -31,7 +78,7 @@ Successful: <%= notice %>
 <hr>
 <br>
 
-<h3>Assessments:</h3>
+<h2>Assessments:</h2>
 <%@user.assessments.map do |assessment| %>
 <li><%= link_to assessment.health_goal, assessment%></li>
 <%end%>
@@ -42,7 +89,8 @@ Successful: <%= notice %>
 <br>
 
 
-<h3>Workout Logs:</h3>
+
+<h2>Workout Logs:</h2>
 <%@user.workout_logs.map do |workout_log| %>
 <li><%=workout_log.workout.workout_type%> on <%= link_to workout_log.date, workout_log%></li>
 <%end%>
@@ -54,7 +102,7 @@ Successful: <%= notice %>
 <hr>
 <br>
 
-<h3>Recovery Logs:</h3>
+<h2>Recovery Logs:</h2>
 <%@user.recovery_logs.map do |recovery_log| %>
 <li><%=recovery_log.recovery.recovery_type%> on <%= link_to recovery_log.date, recovery_log%></li>
 <%end%>
@@ -64,6 +112,21 @@ Successful: <%= notice %>
 <br>
 <hr>
 <br>
-<h3>Other Options:</h3>
+
+<%# <h2>Other Options:</h2>
 <p><%= button_to "Workout Index", {controller: "workouts", action: "index"}, method: :get %></p>
-<p><%= button_to "Recovery Index", {controller: "recoveries", action: "index"}, method: :get %></p>
+<%# <p><%= button_to "Recovery Index", {controller: "recoveries", action: "index"}, method: :get %></p>
+</div>
+
+
+<%#navagation bar%>
+<div class="w3-bottom w3-hide-small">
+  <div class="w3-bar w3-gray w3-center w3-padding w3-opacity-min w3-hover-opacity-off">
+    <a href="/assessments/new" style="width:20%" class="w3-bar-item w3-button">New Assessment</a>
+    <a href="/workout_logs/new" style="width:20%" class="w3-bar-item w3-button">New WorkoutLog</a>
+    <a href="/recovery_logs/new" style="width:20%" class="w3-bar-item w3-button">New RecoveryLog</a>
+    <a href="/workouts" style="width:20%" class="w3-bar-item w3-button">Workout Index</a>
+    <a href="/recoveries" style="width:20%" class="w3-bar-item w3-button">Recovery Index</a>
+
+  </div>
+</div>
