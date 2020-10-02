@@ -43,10 +43,10 @@ ActiveRecord::Schema.define(version: 20200929143014) do
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "username"
-    t.string   "password"
+    t.string   "password_digest"
     t.string   "img_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "workout_logs", force: :cascade do |t|

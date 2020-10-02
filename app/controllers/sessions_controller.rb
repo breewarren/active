@@ -4,19 +4,16 @@ class SessionsController < ApplicationController
     end
  
     def create
-        session[:username] = params[:username]
+        @user = User.find_by(username: params[:username])
         # byebug
-        if  session[:username] == nil
-            flash[:notice] = "Invalid entry. Please try again."
-            redirect_to login_path
-        elsif
-            session[:username].empty?
-            flash[:notice] = "Cannot be left empty. Please try again."
-            redirect_to login_path
-        else
-            @user = User.find_by(username: params[:username])
+        if @user && @user.authenticate(params[:password])
+            # byebug
+            session[:user_id] = @user.id
             flash[:notice] = "Login Successful."
             redirect_to @user
+        else
+            flash[:notice] = "Login invalid. Please try again."
+            redirect_to login_path
         end
     end
 
@@ -24,7 +21,13 @@ class SessionsController < ApplicationController
         session.delete :username
         flash[:notice] = "Logout Successful."
         redirect_to '/'
-        # redirect_to application_hello
+    end
+
+
+    private
+
+    def user_params
+        params.require(:user).permit(:username, :password, :password_confirmation)
     end
 
 

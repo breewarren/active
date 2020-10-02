@@ -1,14 +1,56 @@
-<h1> active.</h1>
-<h2>by ambreea | abbosbek </h1>
+<!DOCTYPE html>
+<html>
 
-<%# (add image or logo here) %>
+<%#start head%>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+<style>
+body,h1,h2{font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+p {line-height: 2}
+.bgimg, .bgimg2 {
+  min-height: 100%;
+  background-position: left;
+  background-size: cover;
+}
+.bgimg {background-image: url("https://i.paste.pics/A9SPO.png")}
+</style>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+
+<%#start body%>
+<body>
+<header class="w3-display-container w3-wide bgimg w3-grayscale-min" id="home">
+  <div class="w3-display-middle w3-text-white w3-center">
+  <br>
+  <br>
+  <br>
+<%= yield %>
+
+
+<%# start code%>
+<br>
+
+
+<h1> active.</h1>
 
 <% if flash[:notice] %>
 Successful: <%= notice %>
 <%end%>
 
-<p>Existing User: <%= button_to "Sign In", {controller: "sessions", action: "new"}, method: :get%></p>
-<p>New User: <%= button_to "Sign Up", {controller: "users", action: "new"}, method: :get %></p> 
+<p>Existing User <%= button_to "Sign In", {controller: "sessions", action: "new"}, method: :get%></p>
+<p>New User <%= button_to "Sign Up", {controller: "users", action: "new"}, method: :get %></p> 
 
 
-
+<%# close it off%>
+</body>
+</html>

@@ -1,14 +1,59 @@
-<h1> active.</h1>
-<h2>by ambreea | abbosbek </h1>
+<!DOCTYPE html>
+<html>
+
+<%#start head%>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+<style>
+body,h1,h2{font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+p {line-height: 1}
+.bgimg, .bgimg2 {
+  min-height: 100%;
+  background-position: right;
+  background-size: cover;
+}
+.bgimg {background-image: url("https://media1.s-nbcnews.com/i/newscms/2020_10/3253776/200303-better-stock-abs-se-123p_2e09aa446ab86bafa0ec35911fc52072.jpg")}
+</style>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<%#start body%>
+<body>
+<header class="w2-display-container bgimg w3-wide w3-grayscale-min" id="home">
+  <div class="w3-display-middle w3-text-white w3-center">
+  <br>
+  <br>
+  <br>
+<%= yield %>
+
+<%# start code%>
+<h1> <b>active.</b></h1>
+<br>
 
 <% if flash[:notice] %>
-Error: <%= notice %>
+<%= notice %>
 <%end%>
 
-<h4>Please login with your username and password:</h4>
+<% if flash[:error] %>
+<%= error %>
+<%end%>
 
 <%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
-  <p>Username: <input name=username></p>
-  <p>Password: <input type="password" name=password></p>
+  <p><b>Username: </b> <input name=username></p>
+  <p><b>Password: </b><input type="password" name=password></p>
+  <br>
   <input type=submit value='Login'>
 <%end%>
+
+<%# close it off%>
+</body>
+</html>

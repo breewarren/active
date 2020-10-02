@@ -1,4 +1,44 @@
-<h1> active. by ambreea | abbosbek </h1>
+<!DOCTYPE html>
+<html>
+
+<%#start head%>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+<style>
+body,h1,h2{font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+p {line-height: 1}
+.bgimg, .bgimg2 {
+  min-height: 100%;
+  background-position: right;
+  background-size: cover;
+}
+
+.bgimg {background-image: url("https://onnitacademy.imgix.net/2016/07/Battlerope-1440x899.jpg")}
+</style>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<%#start body%>
+<body>
+<header class="w2-display-container bgimg w3-wide w3-grayscale-min" id="home">
+  <div class="w3-display-middle w3-text-white w3-center">
+  <%# <div class="w2-display-middle w3-text-white w3-center"> %>
+  <br>
+  <br>
+  <br>
+<%= yield %>
+
+<%#start code%>
+<h1> active.</h1>
 
 <% if flash[:notice] %>
 Successful: <%= notice %>
@@ -10,12 +50,16 @@ Successful: <%= notice %>
 <%end%>
 <%end%>
 
-<h3> Create a New User: </h3>
-<%=form_for @user do |f|%>
+<%=form_for @user, url: '/users' do |f|%>
 <p>First Name: <%= f.text_field :name%></p>
-<p>Username (Email Address): <%= f.text_field :username%></p>
+<p>Email Address: <%= f.text_field :username%></p>
 <p>Password: <%= f.password_field :password%></p>
-<p>Profile Image URL Address: <%=f.text_field :img_url%>
+<p>Password Confirmation: <%= f.password_field :password_confirmation%></p>
+<p>Profile Image URL: <%=f.text_field :img_url%>
 <br>
 <p><%= f.submit "Create User"%></p>
 <%end%>
+
+<%# close it off%>
+</body>
+</html>

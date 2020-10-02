@@ -10,6 +10,8 @@ class User < ApplicationRecord
     validates :username, uniqueness: true
     validates :password, length: {minimum: 4}
 
+    has_secure_password
+
     #accomplishments
     def workout_accomplishment
         user_workout_logs = WorkoutLog.all.select {|workout| workout.user_id == self.id}.count
