@@ -1,39 +1,122 @@
-<h1> active. by ambreea | abbosbek </h1>
+<!----------start styling---------->
+<!DOCTYPE html>
+<html>
+<!----------start head---------->
+<head>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+<style>
+body,h1,h2{font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+p {line-height: 2}
+.bgimg, .bgimg2 {
+  min-height: 100%;
+  background-position: left;
+  background-size: cover;}
+img {border-radius: 50%;}
+hr {height:1px; border:none; color:#000; background-color:#000; width:60%; text-align:center; margin: 0 auto;}
+</style>
+
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= csrf_meta_tags %>
+
+</head>
+<!----------end head---------->
+
+<!----------start body---------->
+<body>
+  <br>
+  <br>
+  <br>
+
+  <%# header bar%>
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-card">
+    <a href="http://localhost:3000" class="w3-bar-item w3-button"><b>ACTIVE. </b>by ambreea | abbosbek</a>
+  </div>
+</div>
+
+  <%# navigation bar%>
+<div class="w3-bottom w3-hide-small">
+  <div class="w3-bar w3-wide w3-gray w3-center w3-padding w3-opacity-min w3-hover-opacity-off">
+    <a href="/assessments/new" style="width:20%" class="w3-bar-item w3-button">New Assessment</a>
+    <a href="/workout_logs/new" style="width:20%" class="w3-bar-item w3-button">New WorkoutLog</a>
+    <a href="/recovery_logs/new" style="width:20%" class="w3-bar-item w3-button">New RecoveryLog</a>
+    <a href="/workouts" style="width:20%" class="w3-bar-item w3-button">Workout Index</a>
+    <a href="/recoveries" style="width:20%" class="w3-bar-item w3-button">Recovery Index</a>
+  </div>
+</div>
+
+<%= yield %>
+
+<div class="w2-display-left w3-wide w3-text-black w3-center">
+<!----------end styling---------->
+
+<!----------start data---------->
 <% if flash[:notice] %>
 Successful: <%= notice %>
 <%end%>
 
-<h3><%=@workout_log.user.name%>'s WorkoutLog Details</h3>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
 
+<h2><%=@workout_log.user.name%>'s WorkoutLog Details</h2>
 
-<li>User: <%=@workout_log.user.name%></li>
-<li>Activity: <%=@workout_log.workout.workout_type%></li>
-<li>Date: <%=@workout_log.date%></li>
-<li>Duration: <%=@workout_log.duration%> minutes</li>
-<li>Calories Burned: <%=@workout_log.calories_burned%> calories</li>
-
+<p>Activity: <%=@workout_log.workout.workout_type%></p>
+<p>Date: <%=@workout_log.date%></p>
+<p>Duration: <%=@workout_log.duration%> minutes</p>
+<p>Calories Burned: <%=@workout_log.calories_burned%> calories</p>
+<p><i> scroll below for more information</i></p>
 <p><%= button_to "Edit WorkoutLog", {controller: "workout_logs", action: "edit"}, method: :get %></p>
 <p><%@user = @workout_log.user%><%= button_to "User Profile", @user, method: :get %></p>
 
-<br>
-<hr>
-<h4>Favorite Workout</h4>
-<li>Your favorite workout to enter into a WorkoutLog is <b><%=@workout_log.user.favorite_workout%></b></li>
-<hr>
-<h4>WorkoutLog Totals</h4>
-<li>Total Workout Logs: You've entered a total of <b><%=@workout_log.user.total_workout_count%></b> WorkoutLogs</li>
-<li>Total Calories Burned: You've burned a total of <b><%=@workout_log.user.total_calories_burned%></b> calories</li>
-<li>Total Duration: You've been active for a total of <b><%=@workout_log.user.total_duration%></b> minutes</li>
-<br>
-<hr>
-<h4>WorkoutLog Averages</h4>
-<li>Average Calories Burned: You've burned an average of <b><%=@workout_log.user.average_calories_burned%></b> calories</li>
-<li>Average Duration: You've been active for an average of <b><%=@workout_log.user.average_duration%></b> minutes</li>
-<br>
-<hr>
-<h4>WorkoutLog Streaks</h4>
-<li>Highest Calorie Burn: The Workout Log with the most calories burned was for <b><%=@workout_log.user.highest_calories_burned%></b> calories</li>
-<li>Longest Duration: The Workout Log with the longest duration was for <b><%=@workout_log.user.longest_duration%></b> minutes</li>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <hr>
+  <br>
 
+<h2>Favorite Workout</h2>
+<p>Your favorite workout to enter into a WorkoutLog is <b><%=@workout_log.user.favorite_workout%></b></p>
+
+  <br>
+
+<h2>WorkoutLog Totals</h2>
+<p>Total Workout Logs: You've entered a total of <b><%=@workout_log.user.total_workout_count%></b> WorkoutLogs</p>
+<p>Total Calories Burned: You've burned a total of <b><%=@workout_log.user.total_calories_burned%></b> calories</p>
+<p>Total Duration: You've been active for a total of <b><%=@workout_log.user.total_duration%></b> minutes</p>
+
+  <br>
+
+<h2>WorkoutLog Averages</h2>
+<p>Average Calories Burned: You've burned an average of <b><%=@workout_log.user.average_calories_burned%></b> calories</p>
+<p>Average Duration: You've been active for an average of <b><%=@workout_log.user.average_duration%></b> minutes</p>
+  
+  <br>
+
+<h2>WorkoutLog Streaks</h2>
+<p>Highest Calorie Burn: The Workout Log with the most calories burned was for <b><%=@workout_log.user.highest_calories_burned%></b> calories</p>
+<p>Longest Duration: The Workout Log with the longest duration was for <b><%=@workout_log.user.longest_duration%></b> minutes</p>
+
+  <br>
+  <br>
+  <br>
+
+</div>
+<!----------end data---------->
+</body>
+<!----------end body---------->
+</html>
 

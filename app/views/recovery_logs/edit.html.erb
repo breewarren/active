@@ -1,10 +1,76 @@
-<h1> active. by ambreea | abbosbek </h1>
+<!DOCTYPE html>
+<html>
+
+<%#start head%>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<!DOCTYPE html>
+<html>
+
+<%#start head%>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+<style>
+body,h1,h2{font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+p {line-height: 1}
+.bgimg, .bgimg2 {
+  min-height: 100%;
+  background-position: right;
+  background-size: cover;
+}
+.bgimg {background-image: url("https://blog.encompasshealth.com/wp-content/uploads/sites/4/2020/04/Woman-doing-yoga.jpg")}
+</style>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<%#start body%>
+<body>
+
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-card">
+    <a href="http://localhost:3000" class="w3-bar-item w3-button"><b>ACTIVE. </b>by ambreea | abbosbek</a>
+    <!-- Float links to the right. Hide them on small screens --> 
+  </div>
+</div>
+
+<%= yield %>
+
+<header class="w2-display-container bgimg w3-wide w3-grayscale-min" id="home">
+  <div class="w3-display-middle w3-text-white w3-center">
+  <%# <div class="w2-display-middle w3-text-white w3-center"> %>
+
+<%# start code%>
 
 <% if flash[:notice] %>
 Successful: <%= notice %>
 <%end%>
 
-<h3> Edit a RecoveryLog: </h3>
+<%if flash[:errors]%>
+<% flash[:errors].each do |error| %>
+<li style= “color:red”>Invalid: <%= error %></li>
+<%end%>
+<%end%>
+
+
+<div class= w3-padding>
+<% if flash[:notice] %>
+Successful: <%= notice %>
+<%end%>
+
+<h2> Edit RecoveryLog </h2>
 <%=form_for @recovery_log do |f|%>
 <p>Select User: <%=f.select :user_id, User.all.map {|user| [user.name, user.id]}%></p>
 <p>Select Recovery: <%=f.select :recovery_id, Recovery.all.map {|recovery| [recovery.recovery_type, recovery.id]}%></p>
@@ -26,6 +92,23 @@ Successful: <%= notice %>
 <%end%>
 
 <%= button_to "Delete RecoveryLog", @recovery_log, method: :delete%>
+</div>
+</div>
+</body>
+</html>
+
+
+<div class="w3-bottom w3-hide-small">
+  <div class="w3-bar w3-wide w3-gray w3-center w3-padding w3-opacity-min w3-hover-opacity-off">
+    <a href="/assessments/new" style="width:20%" class="w3-bar-item w3-button">New Assessment</a>
+    <a href="/workout_logs/new" style="width:20%" class="w3-bar-item w3-button">New WorkoutLog</a>
+    <a href="/recovery_logs/new" style="width:20%" class="w3-bar-item w3-button">New RecoveryLog</a>
+    <a href="/workouts" style="width:20%" class="w3-bar-item w3-button">Workout Index</a>
+    <a href="/recoveries" style="width:20%" class="w3-bar-item w3-button">Recovery Index</a>
+
+  </div>
+</div>
+
 
 
 

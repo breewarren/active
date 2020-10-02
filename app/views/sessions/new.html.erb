@@ -30,7 +30,6 @@ p {line-height: 1}
 <body>
 <header class="w2-display-container bgimg w3-wide w3-grayscale-min" id="home">
   <div class="w3-display-middle w3-text-white w3-center">
-  <%# <div class="w2-display-middle w3-text-white w3-center"> %>
   <br>
   <br>
   <br>
@@ -39,12 +38,17 @@ p {line-height: 1}
 <%# start code%>
 <h1> <b>active.</b></h1>
 <br>
+
+<% if flash[:notice] %>
+<%= notice %>
+<%end%>
+
 <% if flash[:error] %>
-Error: <%= error %>
+<%= error %>
 <%end%>
 
 <%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
-  <p><b>Username:</b> <input name=username></p>
+  <p><b>Username: </b> <input name=username></p>
   <p><b>Password: </b><input type="password" name=password></p>
   <br>
   <input type=submit value='Login'>

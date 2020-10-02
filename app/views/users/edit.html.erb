@@ -1,12 +1,85 @@
-<h1> active. by ambreea | abbosbek </h1>
+<!DOCTYPE html>
+<html>
 
-<h3> Edit a User: </h3>
+<%#start head%>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+<style>
+body,h1,h2{font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+p {line-height: 1}
+.bgimg, .bgimg2 {
+  min-height: 100%;
+  background-position: right;
+  background-size: cover;
+}
+.bgimg {background-image: url("https://onnitacademy.imgix.net/2016/07/Battlerope-1440x899.jpg")}
+</style>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<%#start body%>
+
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-card">
+    <a href="http://localhost:3000" class="w3-bar-item w3-button"><b>ACTIVE. </b>by ambreea | abbosbek</a>
+    <!-- Float links to the right. Hide them on small screens --> 
+  </div>
+</div>
+
+<body>
+<header class="w2-display-container bgimg w3-wide w3-grayscale-min" id="home">
+  <div class="w3-display-middle w3-text-white w3-center">
+  <%# <div class="w2-display-middle w3-text-white w3-center"> %>
+  <br>
+  <br>
+  <br>
+<%= yield %>
+
+<%#start code%>
+<% if flash[:notice] %>
+Successful: <%= notice %>
+<%end%>
+
+<%if flash[:errors]%>
+<% flash[:errors].each do |error| %>
+<li style= “color:red”>Invalid: <%= error %></li>
+<%end%>
+<%end%>
+
+<h2> Edit User </h2>
 <%=form_for @user do |f|%>
 <p>First Name: <%= f.text_field :name%></p>
-<p>Username (Email Address): <%= f.text_field :username%></p>
+<p>Email Address: <%= f.text_field :username%></p>
 <p>Password: <%= f.password_field :password%></p>
+<p>Password Confirmation: <%= f.password_field :password_confirmation%></p>
 <p>Profile Image URL Address: <%=f.text_field :img_url%>
 <br>
+<br>
 <%= f.submit "Update User"%>
-<%= button_to "Delete User", @user, method: :delete%>
 <%end%>
+<%= button_to "Delete User", @user, method: :delete%>
+</div>
+
+<%# close it off%>
+</body>
+</html>
+
+<div class="w3-bottom w3-hide-small">
+  <div class="w3-bar w3-wide w3-gray w3-center w3-padding w3-opacity-min w3-hover-opacity-off">
+    <a href="/assessments/new" style="width:20%" class="w3-bar-item w3-button">New Assessment</a>
+    <a href="/workout_logs/new" style="width:20%" class="w3-bar-item w3-button">New WorkoutLog</a>
+    <a href="/recovery_logs/new" style="width:20%" class="w3-bar-item w3-button">New RecoveryLog</a>
+    <a href="/workouts" style="width:20%" class="w3-bar-item w3-button">Workout Index</a>
+    <a href="/recoveries" style="width:20%" class="w3-bar-item w3-button">Recovery Index</a>
+
+  </div>
+</div>

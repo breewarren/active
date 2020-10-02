@@ -1,55 +1,132 @@
-<h1> active. by ambreea | abbosbek </h1>
+<!DOCTYPE html>
+<html>
+
+<%#start head%>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+<style>
+body,h1,h2{font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+p {line-height: 2}
+.bgimg, .bgimg2 {
+  min-height: 100%;
+  background-position: left;
+  background-size: cover;
+}
+/* .bgimg {background-image: url("https://onnitacademy.imgix.net/2016/07/Battlerope-1440x899.jpg")} */
+
+.bgimg {background-image: url("https://ironworkers433.org/wp-content/uploads/2016/11/Grey-background.jpg")}
+
+img {
+  border-radius: 50%;
+}
+/* body {background-color: #fefefa;} */
+/* body {background-color: #282828;} */
+/* body {background-color: #141414;} */
+/* body {background-color: #1b1e23;} */
+hr {height:1px; border:none; color:#000; background-color:#000; width:60%; text-align:center; margin: 0 auto;}
+
+</style>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<%#end head%>
+
+<%#start body%>
+<body>
+<%# <header class="w3-display-container w3-wide bgimg w3-grayscale-min" id="home"> %>
+  <%# <div class="w3-display-middle w3-text-black w3-center"> %>
+  <br>
+  <br>
+  <br>
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-card">
+    <a href="http://localhost:3000" class="w3-bar-item w3-button"><b>ACTIVE. </b>by ambreea | abbosbek</a>
+    <!-- Float links to the right. Hide them on small screens --> 
+  </div>
+</div>
+
+<%= yield %>
+
+<%# start code%>
+<div class="w2-display-left w3-wide w3-text-black w3-center">
 
 <% if flash[:notice] %>
 Successful: <%= notice %>
 <%end%>
 
-<h3> <%=@assessment.user.name%>'s </li><%=@assessment.health_goal%> Assessment</h3>
+  <br>
+  <br>
+  <br>
+<h2> <%=@assessment.user.name%>'s </li><%=@assessment.health_goal%> Assessment Details</h2>
 
-<hr>
-<h3> Statistics </h3>
-<hr>
-<li>User: <%=@assessment.user.name%></li>
-<li>Age: <%=@assessment.age%> years</li>
-<li>Sex: <%=@assessment.sex%></li>
-<li>Height: <%=@assessment.height%> inches</li>
-<li>Weight: <%=@assessment.weight%> poounds</li>
-<li>Body Fat Percentage: <%=@assessment.body_fat_percent%>%</li>
-<li>Health Goal: <%=@assessment.health_goal%></li>
 
-<p><%= button_to "New Assessment", {action: "new"}, method: :get %></p>
+<p>Age: <%=@assessment.age%> years</p>
+<p>Sex: <%=@assessment.sex%></p>
+<p>Height: <%=@assessment.height%> inches</p>
+<p>Weight: <%=@assessment.weight%> pounds</p>
+<p>Body Fat Percentage: <%=@assessment.body_fat_percent%>%</p>
+<p>Health Goal: <%=@assessment.health_goal%></p>
+
+<i><p>scroll below for more information</></i>
 <p><%= button_to "Edit Assessment", {action: "edit"}, method: :get %></p>
 <p><%@user = @assessment.user%><%= button_to "User Profile", @user, method: :get %></p>
 
+<br>
+<br>
+<br>
+<br>
 <hr>
+<br>
 
-<h3>Assessment Information & Recommendations</h3>
-<hr>
-<h4>Body Mass Index </h4>
+<h2>Body Mass Index </h2>
 <p>BMI Category: Your BMI category is <b><%=@assessment.bmi_category%>.</b></p>
 <i>BMI is calculated value to determine the BMI category (Underweight, Normal Weight, Overweight, or Obese), based on height and weight.</i>
 
 <p>Body Mass Index: Your BMI is <b><%=@assessment.current_bmi%></b>.</p>
 <i>The range for a healthy BMI at a normal weight is <b>18.5-24.9</b>. </i>
-<hr>
-<h4>Body Fat Percentage </h4>
+<br>
+<br>
+<h2>Body Fat Percentage </h2>
 <p>Recommended: A general healthy BF%, given your sex and age, is <b><%=@assessment.recommended_bf_percent%></b>.</p>
 
 <p>BF% Category: Your BF% Category is <b><%=@assessment.bf_percent_category%>.</b></p>
 <i>BF% is the percentage of total weight that is made up of fat, which determines the category (Essential Fat, Athlete, Fitness, Acceptable, or Obese)</i>
-
-<hr>
-<h4>Heart Rate </h4>
+<br>
+<br>
+<h2>Heart Rate </h2>
 <p>Maximum Heart Rate: Your maximum heart rate is <b><%=@assessment.max_hr%></b> beats per minute (bpm).</p>
 <p>Target Heart Rate: Your target heart rate is <b><%=@assessment.target_hr%></b> bpm.</p>
 <i>These are values that can be useful for optimal cardiovascular endurance during activity. </i>
-
-<hr>
-<h4>Nutritional Intake </h4>
+<br>
+<br>
+<h2>Nutritional Intake </h2>
 <p>Caloric Intake: Based on your health goal, you would need to consume an estimated <b><%=@assessment.caloric_intake%> calories</b> each day.</p>
 <p>Water Intake: Based on your weight, it is recommended to consume <b><%=@assessment.water_intake%> ounces</b> of water each day.</p>
 
    
 <br>
-<hr>
 <br>
+<br>
+</div>
+</body>
+</html>
+
+
+<div class="w3-bottom w3-hide-small">
+  <div class="w3-bar w3-wide w3-gray w3-center w3-padding w3-opacity-min w3-hover-opacity-off">
+    <a href="/assessments/new" style="width:20%" class="w3-bar-item w3-button">New Assessment</a>
+    <a href="/workout_logs/new" style="width:20%" class="w3-bar-item w3-button">New WorkoutLog</a>
+    <a href="/recovery_logs/new" style="width:20%" class="w3-bar-item w3-button">New RecoveryLog</a>
+    <a href="/workouts" style="width:20%" class="w3-bar-item w3-button">Workout Index</a>
+    <a href="/recoveries" style="width:20%" class="w3-bar-item w3-button">Recovery Index</a>
+
+  </div>
+</div>

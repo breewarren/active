@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+    before_action :require_login
     before_action :authenticated?, only: :show
 
     def show
@@ -15,7 +16,7 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
         if @user.valid?
             @user.save
-            flash[:notice] = "User successfully created."
+            flash[:notice] = "User successfully created. Please login."
             redirect_to @user
         else
             flash[:errors] = @user.errors.full_messages
@@ -54,5 +55,12 @@ class UsersController < ApplicationController
         end
     end
 
+    def require_login
+        if !session.include? :user_id
+            flash[:notice] = "Please login."
+            redirect_to '/login'
+        end
+    end
+    
 
 end

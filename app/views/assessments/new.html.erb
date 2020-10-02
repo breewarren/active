@@ -54,6 +54,7 @@ Successful: <%= notice %>
 <%end%>
 <%end%>
 
+<div class= w3-padding>
 <h2> Create a New Assessment </h2>
 <%=form_for @assessment do |f|%>
 <p>Select User: <%=f.select :user_id, User.all.map {|user| [user.name, user.id]}%></p>
@@ -77,7 +78,7 @@ Successful: <%= notice %>
 <br>
 <p><%= f.submit "Create Assessment"%></p>
 <%end%>
-
+</div>
 <%# close it off%>
 </div>
 </body>

@@ -18,16 +18,19 @@ p {line-height: 2}
   background-position: left;
   background-size: cover;
 }
+.bgimg {background-image: url("https://onnitacademy.imgix.net/2016/07/Battlerope-1440x899.jpg")}
 
-/* body {background-color: #fefefa;} */
-body {background-color: #1b1b1b;}
-/* body {background-color: #141414;} */
-/* body {background-color: #1b1e23;} */
-
+/* .bgimg {background-image: url("https://ironworkers433.org/wp-content/uploads/2016/11/Grey-background.jpg")} */
 
 img {
   border-radius: 50%;
 }
+/* body {background-color: #fefefa;} */
+/* body {background-coclor: #282828;} */
+/* body {background-color: #141414;} */
+/* body {background-color: #1b1e23;} */
+hr {height:1px; border:none; color:#000; background-color:#000; width:60%; text-align:center; margin: 0 auto;}
+
 </style>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -53,34 +56,33 @@ img {
 <%= yield %>
 
 <%# start code%>
-<div class="w2-display-left w3-wide w3-text-white w3-center">
+<div class="w2-display-left w3-wide w3-text-black w3-center">
 <% if flash[:notice] %>
 Successful: <%= notice %>
 <%end%>
 <%# <h1><center>active.</center></h1> %>
 
-<h2>Welcome, <%=@user.name%>.<h2>
+<h2>Hi, <%=@user.name%>. Let's get active.<h2>
 <%if @user.img_url%>
-<img src="<%=@user.img_url%>" alt="Profile Image" width="300" height="300">
+<img src="<%=@user.img_url%>" alt="Profile Image" width="250" height="250">
 <%end%>
 
 <h2>Account Details</h2>
 Name: <%=@user.name%><br>
 Username: <%=@user.username%><br>
-Password: <%=@user.password%></p>
+<p><i> scroll below for more information</i></p>
 
 <p><%= button_to "Edit Profile", {action: "edit"}, method: :get %></p>
 <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
   <input type=submit value='Logout'>
 <% end %>
-
 <br>
 <br>
 <br>
+<hr>
 <br>
-<br>
-
 <h2>Accomplishments</h2>
+
 <%=@user.workout_accomplishment%><br>
 <br>
 <%=@user.recovery_accomplishment%>
