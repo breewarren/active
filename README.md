@@ -15,7 +15,7 @@ A Ruby on Rails web application with CRUD functioning and analytic features, inc
 active. was inspired by its creators who believe in the importance of an agile, athletic lifestyle. With a series of features, including: Assessment, where one is able to gain knowledge regarding an individual's overall health, as well as WorkoutLogs/RecoveryLogs, which enables one to keep track of movement from a selection of our comprehensive list of options, a user has the ability to attain their health goals, regardless of experience level.
 #
 ## Instructions:
-### Click [here](http://localhost:3000/) to begin the application!
+### Run 'rails s' in the terminal, then click [here](http://localhost:3000/) to begin the application!
 
 #
 #
@@ -274,46 +274,3 @@ active. was inspired by its creators who believe in the importance of an agile, 
 
 ### Video Demo:
  [Video Demo Link](https://video.com/blahblahblah)
-
-### Things Learned:
-* 
-
-### Difficulties:
-* 
-
-### Changes/Modifications/Additions:
-* 
-
-### Highlights
-* 
-
-#
-
-## Thank you! <br> Bree Warren and Abbosbek Muydinboev
-#
-#
-## TO-DO LIST:
-
-monday (planning) - DONE
-tuesday (functionality) - DONE
-
-wednesday (dry code & aesthetics)
-- clean up navigation
-- change name of rails lab, if possible
-- work on simple login validation
-- DRY (partials, before_action, etc.)
-- authentificaion? cookies & sessions?
-- front-end focus on HTML/CSS/Bootstrap
-
-thursday (finishing up)
-- specify route resources
-- finish any back-or front end
-- finish things learned/highlights/difficulties, etc
-- add more seeds for walkthrough, if needed
-- create walkthrough to record
-
-friday (presenting)
-- record walkthrough
-- update readme with any changes
-- present
-
